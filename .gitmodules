@@ -1,0 +1,3 @@
+[submodule "lib/generator"]
+	path = lib/generator
+	url = https://github.com/izkeas/Generators.git

@@ -1,0 +1,19 @@
+{
+    "AttributeGroups" : {
+        "Main Attributes" : {
+            "test Age" : {
+                "type" : "randomRange",
+                "min" : 0,
+                "max" : 10
+            },
+            "test choice" : {
+                "type" : "randomChoice",
+                "choices" : ["A", "B", "C"],
+                "choicesType" : "string"
+            }
+        }
+    },
+    "Config" : {
+        "name" : "MockCharacterBase"
+    }
+}

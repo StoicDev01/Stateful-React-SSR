@@ -1,0 +1,10 @@
+Character related Stuff
+
+here there is folder with possible choices in each theme
+
+base is used to all generators, like
+AtributesBase,
+ClothesBase,
+
+fantasy is only used to generate medieval fantasy things
+and so on and so forth 

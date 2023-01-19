@@ -1,0 +1,1162 @@
+{
+    "AttributeGroups": {
+      "Main Attributes": {
+        "name": {
+          "type": "nameGenerator",
+          "neuter": "USNames.txt",
+          "order": 2
+        },
+        "age": {
+          "type": "randomRange",
+          "min": 5,
+          "max": 99,
+          "order": 1
+        },
+        "gender": {
+          "type": "randomChoice",
+          "choicesType": "string",
+          "choices": [
+            "Female",
+            "Male"
+          ],
+          "order": 1
+        },
+        "height": {
+          "type": "normalDistribution",
+          "distributionType": "height",
+          "med": 1.75,
+          "variation": 0.15,
+          "min": 1.2,
+          "max": 2.1
+        },
+        "weight": {
+          "type": "randomWeight",
+          "min": 40,
+          "max": 120
+        },
+        "profession": {
+          "type": "randomChoice",
+          "choicesType": "characteristic",
+          "choices": [
+            {
+              "name": "Accountant",
+              "description": "<pronoun> is an accountant, and <possessive_pronoun> job involves managing financial records and preparing financial reports for individuals or businesses. <pronoun> may also provide advice on financial matters, such as budgeting and tax planning."
+            },
+            {
+              "name": "Architect",
+              "description": "<pronoun> is an architect, and <possessive_pronoun> job involves designing buildings and other structures. <pronoun> considers factors such as function, safety, and aesthetic appeal when creating <possessive_pronoun> designs."
+            },
+            {
+              "name": "Doctor",
+              "description": "<pronoun> is a doctor, and <possessive_pronoun> job involves diagnosing and treating illnesses and injuries. <pronoun> may specialize in a particular area of medicine, such as pediatrics or surgery."
+            },
+            {
+              "name": "Engineer",
+              "description": "<pronoun> is an engineer, and <possessive_pronoun> job involves applying scientific and mathematical principles to the design, development, and operation of systems and structures. <pronoun> may work in fields such as mechanical, electrical, or civil engineering."
+            },
+            {
+              "name": "Lawyer",
+              "description": "<pronoun> is a lawyer, and <possessive_pronoun> job involves representing clients in legal matters and providing advice on legal issues. <pronoun> may specialize in areas such as criminal law, contract law, or family law."
+            },
+            {
+              "name": "Teacher",
+              "description": "<pronoun> is a teacher, and <possessive_pronoun> job involves instructing students and helping them to learn and understand a subject. <pronoun> may teach at the elementary, secondary, or post-secondary level and may specialize in a particular subject area."
+            },
+            {
+              "name": "Artist",
+              "description": "<pronoun> is an artist, and <possessive_pronoun> job involves creating works of art using a variety of mediums such as paint, sculpture, or digital media. <pronoun> may work as a fine artist, illustrator, or graphic designer."
+            },
+            {
+              "name": "Athlete",
+              "description": "<pronoun> is an athlete, and <possessive_pronoun> job involves participating in competitive sports at a professional level. <pronoun> may play for a team or compete individually in events such as track and field, golf, or tennis."
+            },
+            {
+              "name": "Chef",
+              "description": "<pronoun> is a chef, and <possessive_pronoun> job involves preparing and cooking meals in a restaurant or other food service setting. <pronoun> may specialize in a particular type of cuisine or work in a variety of settings such as catering or private homes."
+            },
+            {
+              "name": "Dentist",
+              "description": "<pronoun> is a dentist, and <possessive_pronoun> job involves diagnosing and treating problems with the teeth and mouth. <pronoun> may work in a dental practice or hospital setting and may specialize in areas such as orthodontics or oral surgery."
+            },
+            {
+              "name": "Journalist",
+              "description": "<pronoun> is a journalist, and <possessive_pronoun> job involves researching and reporting on news and current events for a media outlet such as a newspaper, television station, or online news site. <pronoun> may specialize in a particular area of coverage such as politics or sports."
+            },
+            {
+              "name": "Nurse",
+              "description": "<pronoun> is a nurse, and <possessive_pronoun> job involves providing healthcare services to patients in a variety of settings. <pronoun> may work in a hospital, clinic, or other medical facility and may specialize in areas such as pediatrics or gerontology."
+            },
+            {
+              "name": "Pilot",
+              "description": "<pronoun> is a pilot, and <possessive_pronoun> job involves flying aircraft for commercial or military purposes. <pronoun> may fly planes or helicopters and may work for an airline, cargo company, or other organization."
+            },
+            {
+              "name": "Police officer",
+              "description": "<pronoun> is a police officer, and <possessive_pronoun> job involves protecting and serving the community by enforcing laws and maintaining public safety. <pronoun> may patrol neighborhoods, respond to emergencies, and investigate crimes."
+            },
+            {
+              "name": "Scientist",
+              "description": "<pronoun> is a scientist, and <possessive_pronoun> job involves conducting research and studying the natural world in order to better understand it. <pronoun> may work in fields such as biology, chemistry, or physics and may work in a laboratory or field setting."
+            },
+            {
+              "name": "Software engineer",
+              "description": "<pronoun> is a software engineer, and <possessive_pronoun> job involves designing and developing computer programs and systems. <pronoun> may work on applications, operating systems, or other types of software and may work in a variety of industries."
+            },
+            {
+              "name": "Veterinarian",
+              "description": "<pronoun> is a veterinarian, and <possessive_pronoun> job involves diagnosing and treating illnesses and injuries in animals. <pronoun> may work in a private practice, animal hospital, or other setting and may specialize in a particular area such as small animal care or large animal medicine."
+            },
+            {
+              "name": "Writer",
+              "description": "<pronoun> is a writer, and <possessive_pronoun> job involves creating written content such as articles, books, or scripts. <pronoun> may work as a freelance writer or for a publishing company and may specialize in a particular genre or topic."
+            }
+          ]
+        },
+        "origin": {
+          "type": "randomChoice",
+          "choicesType": "characteristic",
+          "choices": [
+            {
+              "name": "African",
+              "description": "<pronoun> is African, and <possessive_pronoun> ancestry originates from the continent of Africa. This includes countries such as Algeria, Egypt, and South Africa."
+            },
+            {
+              "name": "Asian",
+              "description": "<pronoun> is Asian, and <possessive_pronoun> ancestry originates from the continent of Asia. This includes countries such as China, India, and Japan."
+            },
+            {
+              "name": "European",
+              "description": "<pronoun> is European, and <possessive_pronoun> ancestry originates from the continent of Europe. This includes countries such as France, Germany, and Italy."
+            },
+            {
+              "name": "Latin American",
+              "description": "<pronoun> is Latin American, and <possessive_pronoun> ancestry originates from countries in Central and South America, as well as the Caribbean. This includes countries such as Brazil, Mexico, and Cuba."
+            },
+            {
+              "name": "Middle Eastern",
+              "description": "<pronoun> is Middle Eastern, and <possessive_pronoun> ancestry originates from countries in the Middle East and North Africa. This includes countries such as Iran, Iraq, and Saudi Arabia."
+            },
+            {
+              "name": "Native American",
+              "description": "<pronoun> is Native American, and <possessive_pronoun> ancestry originates from the indigenous peoples of the Americas. This includes tribes such as the Cherokee, Navajo, and Sioux."
+            },
+            {
+              "name": "Australian",
+              "description": "<pronoun> is Australian, and <possessive_pronoun> ancestry originates from the country of Australia. This includes indigenous peoples as well as immigrants from a variety of countries."
+            },
+            {
+              "name": "Canadian",
+              "description": "<pronoun> is Canadian, and <possessive_pronoun> ancestry originates from the country of Canada. This includes indigenous peoples as well as immigrants from a variety of countries."
+            },
+            {
+              "name": "Caribbean",
+              "description": "<pronoun> is Caribbean, and <possessive_pronoun> ancestry originates from countries in the Caribbean region. This includes countries such as Barbados, Jamaica, and Trinidad and Tobago."
+            },
+            {
+              "name": "Indian",
+              "description": "<pronoun> is Indian, and <possessive_pronoun> ancestry originates from the country of India. This includes a diverse range of cultures and religions within the country."
+            },
+            {
+              "name": "New Zealander",
+              "description": "<pronoun> is New Zealander, and <possessive_pronoun> ancestry originates from the country of New Zealand. This includes indigenous peoples as well as immigrants from a variety of countries."
+            },
+            {
+              "name": "Russian",
+              "description": "<pronoun> is Russian, and <possessive_pronoun> ancestry originates from the country of Russia. This includes a diverse range of cultures and ethnicities within the country."
+            }
+          ]
+        }
+      },
+      "Appearence": {
+        "hair shape": {
+          "type": "randomChoice",
+          "choicesType": "characteristic",
+          "choices": [
+            {
+              "name": "curly medium hair",
+              "description": "<pronoun> has a head of curly, medium-length hair. The curls are bouncy and defined, and the hair has a lot of volume and movement."
+            },
+            {
+              "name": "straight long hair",
+              "description": "<pronoun> has long, straight hair that falls to <possessive_pronoun> waist. The hair is smooth and shiny, and has a sleek, polished look."
+            },
+            {
+              "name": "wavy short hair",
+              "description": "<pronoun> has short, wavy hair that is cut just above the ears. The waves are loose and messy, giving the hair a laid-back, casual appearance."
+            },
+            {
+              "name": "pixie cut",
+              "description": "<pronoun> has a pixie cut, which is a very short, choppy haircut with layers. The hair is shorter at the back and sides, and a bit longer on top. It has a edgy, modern look."
+            },
+            {
+              "name": "bob cut",
+              "description": "<pronoun> has a bob cut, which is a short, straight haircut that falls just above the jawline or below the chin. The hair is cut in a blunt, straight line, and has a clean, classic look."
+            },
+            {
+              "name": "updo",
+              "description": "<pronoun> has <possessive_pronoun> hair styled in an updo, which is a hairstyle where the hair is pinned up at the top of the head, leaving little or no hair hanging down. It's a formal, elegant style often worn to special occasions."
+            },
+            {
+              "name": "french braid",
+              "description": "<pronoun> has a french braid, which is a type of braid that starts at the back of the head and is made by adding sections of hair to the braid as it is braided. It has a chic, sophisticated look."
+            },
+            {
+              "name": "cornrows",
+              "description": "<pronoun> has cornrows, which is a hairstyle where the hair is divided into thin braids and braided close to the scalp, forming parallel rows. It's a traditional hairstyle with African origins."
+            },
+            {
+              "name": "dreadlocks",
+              "description": "<pronoun> has dreadlocks, which are thick braids of hair that resemble ropes. They are created by braiding the hair and allowing it to mat and tangle over time."
+            },
+            {
+              "name": "afro",
+              "description": "<pronoun> has an afro, which is a hairstyle where the hair is combed up and out, forming a sphere of voluminous hair. It's a bold, distinctive style often associated with the African-American community."
+            },
+            {
+              "name": "curly bob",
+              "description": "<pronoun> has a curly bob, which is a short haircut with layers and curls. The hair is cut to the jawline or just below, and the curls are bouncy and defined. It has a fun, playful look."
+            },
+            {
+              "name": "faux hawk",
+              "description": "<pronoun> has a faux hawk, which is a hairstyle that imitates the appearance of a mohawk, but without shaving the sides of the head. The hair on top is styled up and towards the center of the head, while the sides are trimmed short. It has a edgy, rebellious look."
+            },
+            {
+              "name": "side part",
+              "description": "<pronoun> has a side part, which is a hairstyle where the hair is parted on one side of the head. The hair on the side with the part is combed over, while the hair on the other side is brushed back. It has a sleek, polished look."
+            },
+            {
+              "name": "side swept bangs",
+              "description": "<pronoun> has side swept bangs, which are a type of fringe that is swept to the side. The bangs are cut straight across the forehead and then brushed to one side, covering part of the forehead. They add a touch of glamour and femininity to the hairstyle."
+            },
+            {
+              "name": "bun",
+              "description": "<pronoun> has <possessive_pronoun> hair styled in a bun, which is a hairstyle where the hair is gathered and twisted into a knot at the back or top of the head. It can be a low bun at the nape of the neck, a mid-level bun at the crown of the head, or a high bun at the top of the head. It's a versatile, elegant style that can be worn for formal or casual occasions."
+            },
+            {
+              "name": "ponytail",
+              "description": "<pronoun> has <possessive_pronoun> hair styled in a ponytail, which is a hairstyle where the hair is gathered and secured with a hair tie at the back of the head. The ponytail can be high, mid-level, or low, and can be worn smooth and sleek or with volume and texture. It's a simple, practical style that is easy to create and maintain."
+            }
+          ]
+        },
+        "hair color": {
+          "type": "randomChoice",
+          "choicesType": "string",
+          "choices": [
+            "Blonde",
+            "Black",
+            "Brown",
+            "Red",
+            "Gray"
+          ]
+        },
+        "eye color": {
+          "type": "randomChoice",
+          "choicesType": "string",
+          "choices": [
+            "Blue",
+            "Black",
+            "Brown",
+            "Green",
+            "Gray"
+          ]
+        },
+        "face shape": {
+          "type": "randomChoice",
+          "choicesType": "characteristic",
+          "choices": [
+            {
+              "name": "round",
+              "description": "<pronoun> has a round face with full, curved cheeks and a rounded chin. <possessive_pronoun> face is roughly as wide as it is long."
+            },
+            {
+              "name": "oval",
+              "description": "<pronoun> has an oval face, which is a long, slender face shape with a slightly rounded chin and high cheekbones. It is considered a balanced and harmonious face shape."
+            },
+            {
+              "name": "square",
+              "description": "<pronoun> has a square face with a strong, defined jawline and a broad forehead. <possessive_pronoun> face is roughly as wide as it is long."
+            },
+            {
+              "name": "heart-shaped",
+              "description": "<pronoun> has a heart-shaped face, which is a face shape characterized by a wide forehead and high cheekbones that taper down to a narrow chin."
+            },
+            {
+              "name": "triangular",
+              "description": "<pronoun> has a triangular face, which is a face shape with a narrow forehead and a wide jawline and chin. It is also sometimes called a pear-shaped face."
+            },
+            {
+              "name": "oblong",
+              "description": "<pronoun> has an oblong face, which is a long and narrow face shape with a slightly pointed chin. It is also sometimes called a rectangle face shape."
+            },
+            {
+              "name": "diamond",
+              "description": "<pronoun> has a diamond face, which is a face shape with a narrow forehead and jawline and prominent cheekbones. It is a rare face shape."
+            }
+          ]
+        },
+        "skin color": {
+          "type": "randomChoice",
+          "choicesType": "string",
+          "choices": [
+            "Fair",
+            "Olive",
+            "Tan",
+            "Dark"
+          ]
+        },
+        "body shape": {
+          "type": "randomChoice",
+          "choicesType": "characteristic",
+          "choices": [
+            {
+              "name": "slim",
+              "description": "<pronoun> has a slim body with a slender build and minimal muscle definition. <pronoun> generally has a small frame and a low body fat percentage."
+            },
+            {
+              "name": "athletic",
+              "description": "<pronoun> has an athletic body with well-defined muscles and a toned appearance. <pronoun> generally has a medium to large frame and a low to moderate body fat percentage."
+            },
+            {
+              "name": "curvy",
+              "description": "<pronoun> has a curvy body with full hips, a defined waist, and ample buttocks. <pronoun> generally has a medium to large frame and a moderate to high body fat percentage."
+            },
+            {
+              "name": "pear-shaped",
+              "description": "<pronoun> has a pear-shaped body with a smaller upper body and wider hips and buttocks. <pronoun> generally has a small to medium frame and a moderate to high body fat percentage."
+            },
+            {
+              "name": "hourglass",
+              "description": "<pronoun> has an hourglass body with a defined waist and full hips and bust. <pronoun> generally has a medium to large frame and a moderate body fat percentage."
+            },
+            {
+              "name": "rectangle",
+              "description": "<pronoun> has a rectangle body with little definition in the waist and an overall rectangular shape. <pronoun> generally has a medium to large frame and a moderate to high body fat percentage."
+            },
+            {
+              "name": "apple",
+              "description": "<pronoun> has an apple body shape with a round midsection and a tendency to carry excess weight in the abdomen. <pronoun> generally has a medium to large frame and a high body fat percentage."
+            }
+          ]
+        },
+        "facial features": {
+          "type": "randomChoice",
+          "choicesType": "string",
+          "choices": [
+            "High cheekbones",
+            "Full lips",
+            "Thin eyebrows",
+            "Thick eyebrows",
+            "High forehead",
+            "Low forehead"
+          ]
+        },
+        "tattoos": {
+          "type": "randomChoice",
+          "choicesType": "string",
+          "chance": 0.3,
+          "count": 2,
+          "choices": [
+            "Butterfly on right shoulder",
+            "Flower on left wrist",
+            "Anchor on right bicep",
+            "Skull on left calf"
+          ]
+        },
+        "scars": {
+          "chance": 0.2,
+          "min" : 0,
+          "max" : 1,
+          "type": "randomChoice",
+          "choicesType": "string",
+          "choices": [
+            "Small scar on left cheek",
+            "Long scar on right arm",
+            "Round scar on left knee"
+          ]
+        },
+        "clothing": {
+          "type": "randomChoice",
+          "choicesType": "characteristic",
+          "min" : 3,
+          "choices": [
+            {
+              "name": "old jeans",
+              "description": "<pronoun> has an old pair of jeans that are worn and faded. They are made of denim and have a relaxed fit."
+            },
+            {
+              "name": "little black dress",
+              "description": "<pronoun> has a little black dress that is a classic, versatile garment. It is made of a form-fitting fabric and falls just above the knee."
+            },
+            {
+              "name": "suit jacket",
+              "description": "<pronoun> has a suit jacket that is part of a formal suit. It is made of a tailored, structured fabric and has a professional appearance."
+            },
+            {
+              "name": "maxi dress",
+              "description": "<pronoun> has a maxi dress that is a long, flowing garment that falls to the floor or just above the ankles. It is made of a lightweight fabric and has a bohemian or casual vibe."
+            },
+            {
+              "name": "leather jacket",
+              "description": "<pronoun> has a leather jacket that is a classic, edgy garment. It is made of leather and has a fitted or relaxed fit depending on the style."
+            },
+            {
+              "name": "sweatshirt",
+              "description": "<pronoun> has a sweatshirt that is a casual, comfortable garment made of a soft, fleece fabric. It has a relaxed fit and is often worn for lounging or athletic activities."
+            },
+            {
+              "name": "button-down shirt",
+              "description": "<pronoun> has a button-down shirt that is a versatile garment with a collared neck and buttons down the front. It is made of a lightweight fabric and can be dressed up or down."
+            },
+            {
+              "name": "floral sundress",
+              "description": "<pronoun> has a floral sundress that is a casual, summery garment made of a lightweight fabric and covered in a colorful floral print. It has a relaxed fit and falls just above the knee."
+            },
+            {
+              "name": "denim shorts",
+              "description": "<pronoun> has a pair of denim shorts that are a casual, summery garment made of denim fabric. They have a relaxed fit and fall just above the knee."
+            },
+            {
+              "name": "leggings",
+              "description": "<pronoun> has a pair of leggings that are a form-fitting garment made of a stretchy fabric. They are often worn for athletic activities or as a comfortable, casual alternative to pants."
+            },
+            {
+              "name": "t-shirt",
+              "description": "<pronoun> has a t-shirt that is a casual, comfortable garment made of a lightweight fabric. It has a relaxed fit and short sleeves."
+            },
+            {
+              "name": "sneakers",
+              "description": "<pronoun> has a pair of sneakers that are a type of casual, comfortable footwear. They have a flexible sole and are often worn for athletic activities."
+            },
+            {
+              "name": "jeans",
+              "description": "<pronoun> has a pair of jeans that are a versatile, casual garment made of denim fabric. They have a fitted or relaxed fit depending on the style."
+            },
+            {
+              "name": "sandals",
+              "description": "<pronoun> has a pair of sandals that are a type of open-toed footwear. They have a flat or heeled sole and are often worn in warm weather."
+            },
+            {
+              "name": "dress pants",
+              "descricountption": "<pronoun> has a pair of dress pants that are a formal garment made of a tailored fabric. They have a fitted or relaxed fit depending on the style and are worn for business or formal occasions."
+            },
+            {
+              "name": "skirt",
+              "description": "<pronoun> has a skirt that is a garment that covers the lower half of the body and is made of a variety of fabrics. It can be a formal or casual garment and can range in length from just above the knee to the ankles."
+            },
+            {
+              "name": "cardigan",
+              "description": "<pronoun> has a cardigan that is a type of sweater with a front opening and long sleeves. It is often made of a lightweight fabric and can be dressed up or down."
+            },
+            {
+              "name": "crop top",
+              "description": "<pronoun> has a crop top that is a short, waist-length garment that exposes the midriff. It is often made of a form-fitting fabric and is a casual or trendy garment."
+            },
+            {
+              "name": "button-up shirt",
+              "description": "<pronoun> has a button-up shirt that is a collared garment with buttons down the front. It is often made of a lightweight fabric and can be dressed up or down."
+            },
+            {
+              "name": "hoodie",
+              "description": "<pronoun> has a hoodie that is a casual, comfortable garment made of a soft, fleece fabric. It has a relaxed fit and a hood attached to the neck."
+            },
+            {
+              "name": "jumpsuit",
+              "description": "<pronoun> has a jumpsuit that is a one-piece garment with a bodice and pants or shorts. It is often made of a form-fitting fabric and can be dressed up or down."
+            },
+            {
+              "name": "fancy dress",
+              "description": "<pronoun> has a fancy dress that is a formal or elegant garment made of a luxurious fabric. It is often worn to special occasions such as weddings or black tie events."
+            },
+            {
+              "name": "tank top",
+              "description": "<pronoun> has a tank top that is a sleeveless, waist-length garment often made of a lightweight fabric."
+            }
+          ]
+        }
+      },
+      "Mental": {
+        "events": {
+          "type": "randomChoice",
+          "choicesType": "characteristic",
+          "min" : 2,
+          "max" : 3,
+          "nullable": true,
+          "choices": [
+            {
+              "name": "Fought in school",
+              "description": "One day, when <pronoun> was very angry, <pronoun> started to fight with <possessive_pronoun> colleagues at school but got a suspension as a result. This event may have had a negative impact on <possessive_pronoun> relationships with <possessive_pronoun> peers and may have caused <object_pronoun> to feel ashamed or regretful."
+            },
+            {
+              "name": "Experienced a natural disaster",
+              "description": "<pronoun> experienced a natural disaster, such as a hurricane or earthquake, which caused significant damage to <possessive_pronoun> home and community. This event may have had a traumatic effect on <object_pronoun> and may have caused <object_pronoun> to feel anxious or fearful in the future."
+            },
+            {
+              "name": "Lost a loved one",
+              "description": "<pronoun> lost a loved one, such as a parent or spouse, which caused <possessive_pronoun> to experience grief and loss. This event may have had a significant impact on <possessive_pronoun> emotional well-being and may have caused <object_pronoun> to feel lonely or depressed."
+            },
+            {
+              "name": "Suffered a serious injury",
+              "description": "<pronoun> suffered a serious injury, such as a broken bone or head injury, which required medical treatment and a long recovery period. This event may have had a physical and emotional impact on <object_pronoun> and may have caused <object_pronoun> to feel pain or discomfort."
+            },
+            {
+              "name": "Suffered a serious illness",
+              "description": "<pronoun> suffered a serious illness, such as cancer or a chronic condition, which required medical treatment and a long recovery period. This event may have had a physical and emotional impact on <object_pronoun> and may have caused <object_pronoun> to feel weak or vulnerable."
+            },
+            {
+              "name": "Experienced a divorce",
+              "description": "<pronoun> experienced a divorce, which ended <possessive_pronoun> marriage and may have caused <object_pronoun> to feel heartbroken or lonely. This event may have had a significant impact on <possessive_pronoun> emotional well-being and may have caused <object_pronoun> to feel uncertain about the future."
+            },
+            {
+              "name": "Faced financial difficulties",
+              "description": "<pronoun> faced financial difficulties, such as bankruptcy or debt, which caused <object_pronoun> to feel stressed and overwhelmed. This event may have had a negative impact on <possessive_pronoun> financial well-being and may have caused <object_pronoun> to feel worried about the future."
+            },
+            {
+              "name": "Experienced discrimination",
+              "description": "<pronoun> experienced discrimination, such as racism or sexism, which caused <object_pronoun> feel marginalized and mistreated. This event may have had a negative impact on <possessive_pronoun> self-esteem and may have caused <object_pronoun> feel angry or hurt."
+            },
+            {
+              "name": "Survived a car accident",
+              "description": "<pronoun> survived a car accident, which caused <object_pronoun> experience physical injuries and emotional trauma. This event may have had a significant impact on <possessive_pronoun> well-being and may have caused <object_pronoun> feel anxious or fearful when driving in the future."
+            },
+            {
+              "name": "Faced a mental health crisis",
+              "description": "<pronoun> faced a mental health crisis, such as a depression or anxiety disorder, which caused <object_pronoun> to feel overwhelmed and distressed. This event may have had a negative impact on <possessive_pronoun> emotional well-being and may have caused <object_pronoun> to feel isolated or helpless."
+            },
+            {
+              "name": "Experienced a failed relationship",
+              "description": "<pronoun> experienced a failed relationship, such as a break-up or divorce, which caused <object_pronoun> feel heartbroken or lonely. This event may have had a significant impact on <possessive_pronoun> emotional well-being and may have caused <object_pronoun> feel uncertain about the future."
+            },
+            {
+              "name": "Faced a major personal challenge",
+              "description": "<pronoun> faced a major personal challenge, such as overcoming a substance abuse problem or dealing with a difficult family situation, which caused <object_pronoun> to feel stressed and overwhelmed. This event may have had a negative impact on <possessive_pronoun> well-being and may have caused <object_pronoun> to feel unsure of himself."
+            },
+            {
+              "name": "Faced a major career change",
+              "description": "<pronoun> faced a major career change, such as being laid off or switching industries, which caused <object_pronoun> to feel uncertain and anxious. This event may have had a negative impact on <possessive_pronoun> financial well-being and may have caused <object_pronoun> to feel unsure about the future."
+            },
+            {
+              "name": "Experienced a personal conflict",
+              "description": "<pronoun> experienced a personal conflict, such as a disagreement with a family member or friend, which caused <object_pronoun> feel stressed and upset. This event may have had a negative impact on <possessiv_pronoun> relationships and may have caused <object_pronoun> feel isolated or misunderstood."
+            },
+            {
+              "name": "Faced a major health scare",
+              "description": "<pronoun> faced a major health scare, such as a cancer diagnosis or heart attack, which caused <object_pronoun> to feel frightened and uncertain. This event may have had a significant impact on <possessive_pronoun> physical and emotional well-being and may have caused <object_pronoun> to feel vulnerable or helpless."
+            },
+            {
+              "name": "Experienced a personal betrayal",
+              "description": "<pronoun> experienced a personal betrayal, such as a friend or partner cheating on <possessiv_pronoun>, which caused <object_pronoun> feel hurt and betrayed. This event may have had a negative impact on <possessive_pronoun> relationships and may have caused <object_pronoun> feel untrusting or skeptical."
+            }
+          ]
+        },
+        "values": {
+          "type": "randomChoice",
+          "choicesType": "characteristic",
+          "min" : 1,
+          "max" : 2,
+          "nullable": true,
+          "choices": [
+            {
+              "name": "Loyalty",
+              "description": "<pronoun> is loyal to <possessive_pronoun> friends, family, and loved ones, and is always willing to support and stand by them."
+            },
+            {
+              "name": "Honesty",
+              "description": "<pronoun> is honest and always tells the truth, even when it may be difficult to do so. <pronoun> values honesty and integrity in herself and others."
+            },
+            {
+              "name": "Respect",
+              "description": "<pronoun> values respect and always treats others with kindness and consideration, regardless of their background or beliefs."
+            },
+            {
+              "name": "Compassion",
+              "description": "<pronoun> has a strong sense of compassion and empathy towards others, and is always willing to lend a helping hand to those in need."
+            },
+            {
+              "name": "Determination",
+              "description": "<pronoun> is determined and always sets goals for himself and works hard to achieve them. <pronoun> is not easily discouraged and always perseveres."
+            },
+            {
+              "name": "Independence",
+              "description": "<pronoun> values independence and the ability to make <possessive_pronoun> own decisions and choices. <pronoun> is a strong and confident person who is comfortable standing up for herself."
+            },
+            {
+              "name": "Justice",
+              "description": "<pronoun> values justice and always strives to do what is fair and right. <pronoun> believes in equality and treating all individuals with respect and dignity."
+            },
+            {
+              "name": "Forgiveness",
+              "description": "<pronoun> is forgiving and is always willing to offer second chances to others. <pronoun> believes in the power of forgiveness to heal and move forward."
+            }
+          ]
+        },
+        "beliefs": {
+          "type": "randomChoice",
+          "choicesType": "characteristic",
+          "min" : 1,
+          "max" : 2,
+          "nullable": true,
+          "choices": [
+            {
+              "name": "In the power of hard work",
+              "description": "<pronoun> believes that hard work and dedication are the key to success and achieving one's goals."
+            },
+            {
+              "name": "In the importance of education",
+              "description": "<pronoun> believes that education is a fundamental right and is essential for personal and professional growth and development."
+            },
+            {
+              "name": "In the value of honesty and integrity",
+              "description": "<pronoun> believes that honesty and integrity are important personal qualities that should be upheld in all aspects of life."
+            },
+            {
+              "name": "In the importance of family",
+              "description": "<pronoun> believes that family is a vital source of support and love, and that strong family bonds are essential for happiness and well-being."
+            },
+            {
+              "name": "In the power of positive thinking",
+              "description": "<pronoun> believes that a positive attitude and mindset can help to overcome challenges and lead to a happier, more fulfilling life."
+            },
+            {
+              "name": "In the value of personal responsibility",
+              "description": "<pronoun> believes that individuals should take responsibility for their actions and decisions, and that this is essential for personal growth and development."
+            },
+            {
+              "name": "In the importance of kindness and compassion",
+              "description": "<pronoun> believes that kindness and compassion towards others are essential for creating a more peaceful and harmonious world."
+            },
+            {
+              "name": "In the value of diversity and inclusion",
+              "description": "<pronoun> believes that diversity and inclusivity are important values that should be celebrated and embraced in all aspects of life."
+            }
+          ]
+        },
+        "likes": {
+          "type": "randomChoice",
+          "choicesType": "characteristic",
+          "min" : 1,
+          "max" : 2,
+          "nullable": true,
+          "choices": [
+            {
+              "name": "Reading",
+              "description": "<pronoun> likes reading books and spends a lot of time lost in the pages of <possessive_pronoun> favorite novels. <pronoun> enjoys learning new things and exploring different worlds through literature."
+            },
+            {
+              "name": "Sports",
+              "description": "<pronoun> is a big fan of sports and enjoys watching and playing a variety of different games. <pronoun> is passionate about <possessive_pronoun> favorite team and loves the excitement and competition of sports."
+            },
+            {
+              "name": "Music",
+              "description": "<pronoun> is a music lover and enjoys listening to a wide range of genres. <pronoun> often goes to concerts and festivals to see <possessive_pronoun> favorite bands and discover new music."
+            },
+            {
+              "name": "Cooking",
+              "description": "<pronoun> enjoys cooking and experimenting with new recipes. <pronoun> is skilled in the kitchen and loves to share <possessive_pronoun> creations with others."
+            },
+            {
+              "name": "Travel",
+              "description": "<pronoun> is an adventurous person who loves to travel and explore new places. <pronoun> is always planning <possessive_pronoun> next trip and loves to learn about different cultures and ways of life."
+            },
+            {
+              "name": "Art",
+              "description": "<pronoun> has a passion for art and enjoys creating <possessive_pronoun> own pieces as well as admiring the work of others. <pronoun> is drawn to different mediums such as painting, sculpture, and photography."
+            },
+            {
+              "name": "Fashion",
+              "description": "<pronoun> is interested in fashion and enjoys keeping up with the latest trends. <pronoun> takes pride in <possessive_pronoun> appearance and has a unique sense of style."
+            },
+            {
+              "name": "Nature",
+              "description": "<pronoun> loves being outdoors and spending time in nature. <pronoun> enjoys activities such as hiking, camping, and birdwatching and appreciates the beauty and peace of the natural world."
+            },
+            {
+              "name": "Movies",
+              "description": "<pronoun> is a movie enthusiast and enjoys watching a wide range of films. <pronoun> is particularly interested in classic movies and loves to discover new favorites."
+            },
+            {
+              "name": "Theater",
+              "description": "<pronoun> is a theater fan and enjoys attending live performances of plays and musicals. <pronoun> is particularly interested in supporting local and emerging artists."
+            },
+            {
+              "name": "Gardening",
+              "description": "<pronoun> has a green thumb and enjoys gardening. <pronoun> takes pleasure in cultivating plants and flowers and creating a beautiful outdoor space."
+            },
+            {
+              "name": "Photography",
+              "description": "<pronoun> is interested in photography and enjoys taking pictures of landscapes, portraits, and other subjects. <pronoun> is skilled in editing and printing <possessive_pronoun> photos."
+            },
+            {
+              "name": "Exercise",
+              "description": "<pronoun> is an active person and enjoys participating in various forms of exercise. <pronoun> is particularly interested in sports, running, and weightlifting."
+            },
+            {
+              "name": "Puzzles",
+              "description": "<pronoun> enjoys solving puzzles and finds them to be a relaxing and challenging pastime. <pronoun> is skilled at completing crosswords, jigsaw puzzles, and other brain teasers."
+            },
+            {
+              "name": "Dancing",
+              "description": "<pronoun> is a dancer and enjoys practicing and performing various styles of dance. <pronoun> is skilled in techniques such as tap, jazz, and ballet."
+            },
+            {
+              "name": "Writing",
+              "description": "<pronoun> is a writer and enjoys creating stories, poems, and other written works. <pronoun> is skilled in crafting compelling characters and plots and is always working on new projects."
+            },
+            {
+              "name": "Board games",
+              "description": "<pronoun> enjoys playing board games and is skilled at strategy games such as chess and Go. <pronoun> also enjoys more casual games like Monopoly and Scrabble."
+            },
+            {
+              "name": "Technology",
+              "description": "<pronoun> is interested in technology and enjoys learning about the latest innovations and gadgets. <pronoun> is skilled in using computers and other devices and is always up to date on the latest trends."
+            },
+            {
+              "name": "Pets",
+              "description": "<pronoun> is an animal lover and enjoys spending time with <possessive_pronoun> pets. <pronoun> is particularly fond of dogs and cats and takes great care of <possessive_pronoun> furry companions."
+            },
+            {
+              "name": "Gambling",
+              "description": "<pronoun> enjoys gambling and is skilled at games such as poker and blackjack. <pronoun> is always up for a good game and enjoys the thrill of betting and winning."
+            },
+            {
+              "name": "Comedy",
+              "description": "<pronoun> is a fan of comedy and enjoys watching stand-up specials and funny movies. <pronoun> has a great sense of humor and is always ready for a good laugh."
+            },
+            {
+              "name": "Finance",
+              "description": "<pronoun> is interested in finance and enjoys learning about investment strategies and managing <possessive_pronoun> own money. <pronoun> is skilled at budgeting and saving and is always looking for ways to grow <possessive_pronoun> wealth."
+            },
+            {
+              "name": "Fashion design",
+              "description": "<pronoun> is interested in fashion design and enjoys creating <possessive_pronoun> own clothing and accessories. <pronoun> is skilled at sewing and has a unique sense of style."
+            },
+            {
+              "name": "Graphic design",
+              "description": "<pronoun> is interested in graphic design and enjoys creating digital art and designs. <pronoun> is skilled in using software such as Photoshop and Illustrator and is always working on new projects."
+            },
+            {
+              "name": "Fitness",
+              "description": "<pronoun> is interested in fitness and enjoys participating in activities that promote physical health and wellness. <pronoun> is particularly interested in yoga, Pilates, and other mind-body practices."
+            },
+            {
+              "name": "Golf",
+              "description": "<pronoun> is a golf enthusiast and enjoys playing and watching the sport. <pronoun> is skilled at hitting the ball and is always looking to improve <possessive_pronoun> game."
+            },
+            {
+              "name": "Board sports",
+              "description": "<pronoun> is a fan of board sports such as skateboarding, snowboarding, and surfing. <pronoun> enjoys participating in these activities and is always looking for new challenges."
+            },
+            {
+              "name": "Fencing",
+              "description": "<pronoun> is interested in fencing and enjoys practicing and competing in the sport. <pronoun> is skilled in using a sword and is always looking to improve <possessive_pronoun> technique."
+            },
+            {
+              "name": "Cooking shows",
+              "description": "<pronoun> is a fan of cooking shows and enjoys watching professional chefs create delicious dishes. <pronoun> is inspired by their creativity and is always looking to learn new cooking techniques."
+            },
+            {
+              "name": "Home improvement",
+              "description": "<pronoun> enjoys home improvement projects and is skilled at tasks such as painting, carpentry, and landscaping. <pronoun> takes pride in creating a beautiful and functional living space."
+            },
+            {
+              "name": "Cars",
+              "description": "<pronoun> is a car enthusiast and enjoys learning about different makes and models. <pronoun> is particularly interested in classic and exotic vehicles."
+            },
+            {
+              "name": "Gambling",
+              "description": "<pronoun> enjoys gambling and is skilled at games such as slots, roulette, and craps. <pronoun> is always up for a good game and enjoys the thrill of betting and winning."
+            }
+          ]
+        },
+        "dislikes": {
+          "type": "randomChoice",
+          "choicesType": "characteristic",
+          "min" : 1,
+          "max" : 2,
+          "nullable": true,
+          "choices": [
+            {
+              "name": "Lies",
+              "description": "<pronoun> doesn't like lies and values honesty and integrity in himself and others. <pronoun> believes that honesty is the foundation of trust and respect."
+            },
+            {
+              "name": "Injustice",
+              "description": "<pronoun> doesn't like injustice and is always willing to stand up for what is fair and right. <pronoun> believes in equality and treating all individuals with respect and dignity."
+            },
+            {
+              "name": "Negativity",
+              "description": "<pronoun> doesn't like negativity and tries to focus on the positive aspects of life. <pronoun> believes that a positive attitude can help to overcome challenges and lead to a happier, more fulfilling life."
+            },
+            {
+              "name": "Disrespect",
+              "description": "<pronoun> doesn't like disrespect and values kindness and consideration towards others. <pronoun> believes that treating others with respect is essential for creating a positive and harmonious environment."
+            },
+            {
+              "name": "Laziness",
+              "description": "<pronoun> doesn't like laziness and values hard work and dedication. <pronoun> believes that putting effort into one's pursuits is essential for personal and professional growth and development."
+            },
+            {
+              "name": "Intolerance",
+              "description": "<pronoun> doesn't like intolerance and values diversity and inclusivity. <pronoun> believes that it is important to respect and accept others, regardless of their background or beliefs."
+            },
+            {
+              "name": "Cruelty",
+              "description": "<pronoun> doesn't like cruelty and values kindness and compassion towards others. <pronoun> believes that it is important to treat all individuals with respect and empathy."
+            },
+            {
+              "name": "Dishonesty",
+              "description": "<pronoun> doesn't like dishonesty and values honesty and integrity in herself and others. <pronoun> believes that honesty is essential for building trust and maintaining healthy relationships."
+            },
+            {
+              "name": "Spicy food",
+              "description": "<pronoun> doesn't like spicy food and prefers milder flavors. <pronoun> finds that spicy dishes can be too overwhelming and can irritate <possessive_pronoun> stomach."
+            },
+            {
+              "name": "Crowded places",
+              "description": "<pronoun> doesn't like crowded places and prefers more peaceful and quiet environments. <pronoun> finds that crowds can be overwhelming and stressful."
+            },
+            {
+              "name": "Early mornings",
+              "description": "<pronoun> doesn't like early mornings and is a night owl. <pronoun> finds it difficult to wake up early and prefers to stay up late and sleep in."
+            },
+            {
+              "name": "Heights",
+              "description": "<pronoun> doesn't like heights and is afraid of falling or falling from a high place. <pronoun> finds high places to be intimidating and dizzying."
+            },
+            {
+              "name": "Flying",
+              "description": "<pronoun> doesn't like flying and is afraid of planes. <pronoun> finds flying to be stressful and anxiety-inducing, and prefers to travel by land or sea."
+            },
+            {
+              "name": "Mice",
+              "description": "<pronoun> doesn't like mice and is afraid of them. <pronoun> finds them to be dirty and creepy, and doesn't want them in <possessive_pronoun> house."
+            },
+            {
+              "name": "Cilantro",
+              "description": "<pronoun> doesn't like cilantro and finds the taste and smell to be unpleasant. <pronoun> prefers herbs with milder flavors and doesn't use cilantro in <possessive_pronoun> cooking."
+            },
+            {
+              "name": "Crowded cities",
+              "description": "<pronoun> doesn't like crowded cities and prefers more peaceful and quiet environments. <pronoun> finds that large cities can be overwhelming and stressful."
+            },
+            {
+              "name": "Loud noises",
+              "description": "<pronoun> doesn't like loud noises and is sensitive to sound. <pronoun> finds loud noises to be jarring and disruptive, and prefers a quieter environment."
+            },
+            {
+              "name": "Public speaking",
+              "description": "<pronoun> doesn't like public speaking and is afraid of speaking in front of large groups. <pronoun> finds it to be nerve-wracking and stressful, and prefers to communicate in one-on-one or small group settings."
+            }
+          ]
+        },
+        "fears": {
+          "type": "randomChoice",
+          "choicesType": "characteristic",
+          "min" : 1,
+          "max" : 2,
+          "nullable": true,
+          "choices": [
+            {
+              "name": "Arachnophobia",
+              "description": "<pronoun> has arachnophobia, a fear of spiders. <pronoun> finds spiders to be creepy and unsettling and avoids them as much as possible."
+            },
+            {
+              "name": "Acrophobia",
+              "description": "<pronoun> has acrophobia, a fear of heights. <pronoun> finds high places to be intimidating and dizzying and avoids activities that involve heights."
+            },
+            {
+              "name": "Cynophobia",
+              "description": "<pronoun> has cynophobia, a fear of dogs. <pronoun> finds dogs to be intimidating and scary and avoids them as much as possible."
+            },
+            {
+              "name": "Claustrophobia",
+              "description": "<pronoun> has claustrophobia, a fear of confined spaces. <pronoun> finds small, enclosed spaces to be unsettling and stressful and avoids them as much as possible."
+            },
+            {
+              "name": "Agoraphobia",
+              "description": "<pronoun> has agoraphobia, a fear of open or public spaces. <pronoun> finds large, open spaces to be overwhelming and anxiety-inducing and avoids them as much as possible."
+            },
+            {
+              "name": "Ophidiophobia",
+              "description": "<pronoun> has ophidiophobia, a fear of snakes. <pronoun> finds snakes to be creepy and unsettling and avoids them as much as possible."
+            },
+            {
+              "name": "Ailurophobia",
+              "description": "<pronoun> has ailurophobia, a fear of cats. <pronoun> finds cats to be intimidating and scary and avoids them as much as possible."
+            },
+            {
+              "name": "Hemophobia",
+              "description": "<pronoun> has hemophobia, a fear of blood. <pronoun> finds blood to be unsettling and stressful and avoids situations that involve blood."
+            },
+            {
+              "name": "Astraphobia",
+              "description": "<pronoun> has astraphobia, a fear of thunder and lightning. <pronoun> finds storms to be intimidating and anxiety-inducing and avoids them as much as possible."
+            },
+            {
+              "name": "Cacophobia",
+              "description": "<pronoun> has cacophobia, a fear of ugliness. <pronoun> finds ugly or disturbing things to be unsettling and avoids them as much as possible."
+            },
+            {
+              "name": "Trypanophobia",
+              "description": "<pronoun> has trypanophobia, a fear of injections. <pronoun> finds needles to be intimidating and anxiety-inducing and avoids medical procedures that involve injections."
+            },
+            {
+              "name": "Necrophobia",
+              "description": "<pronoun> has necrophobia, a fear of death. <pronoun> finds thoughts of death to be unsettling and stressful and avoids situations that may remind <object_pronoun> of death."
+            }
+          ]
+        },
+        "insecurities": {
+          "type": "randomChoice",
+          "choicesType": "characteristic",
+          "min" : 1,
+          "max" : 2,
+          "nullable": true,
+          "choices": [
+            {
+              "name": "Appearance insecurity",
+              "description": "<pronoun> has an insecurity about <possessive_pronoun> appearance and is self-conscious about <possessive_pronoun> looks. <pronoun> worries about being judged based on <possessive_pronoun> appearance and tries to present himself in a certain way to others."
+            },
+            {
+              "name": "Intelligence insecurity",
+              "description": "<pronoun> has an insecurity about <possessive_pronoun> intelligence and is self-conscious about <possessive_pronoun> ability to think and learn. <pronoun> worries about being judged as unintelligent and tries to prove <possessive_pronoun> intelligence to others."
+            },
+            {
+              "name": "Love insecurity",
+              "description": "<pronoun> has a love insecurity and is self-conscious about <possessive_pronoun> relationships. <pronoun> worries about being rejected or not being loved and tries to prove <possessive_pronoun> worth to others."
+            },
+            {
+              "name": "Social insecurity",
+              "description": "<pronoun> has a social insecurity and is self-conscious about <possessive_pronoun> interactions with others. <pronoun> worries about saying or doing the wrong thing and tries to fit in with <possessive_pronoun> social group."
+            },
+            {
+              "name": "Success insecurity",
+              "description": "<pronoun> has a insecurity about <possessive_pronoun> success and is self-conscious about <possessive_pronoun> achievements. <pronoun> worries about not being successful enough and tries to prove <possessive_pronoun> worth to others."
+            },
+            {
+              "name": "Competence insecurity",
+              "description": "<pronoun> has a competence insecurity and is self-conscious about <possessive_pronoun> skills and abilities. <pronoun> worries about not being good enough and tries to prove <possessive_pronoun> competence to others."
+            }
+          ]
+        },
+        "repressed desires": {
+          "type": "randomChoice",
+          "choicesType": "string",
+          "min" : 0,
+          "max" : 2,
+          "nullable": true,
+          "choices": [
+            {
+              "name": "Adventure",
+              "description": "<pronoun> has a repressed desire for adventure and wants to explore new places and try new things. <pronoun> feels held back by <possessive_pronoun> responsibilities and fears, and wishes <pronoun> could break free and live more freely."
+            },
+            {
+              "name": "Creativity",
+              "description": "<pronoun> has a repressed desire for creativity and wants to express herself through art or writing. <pronoun> feels held back by <possessive_pronoun> lack of talent or confidence, and wishes <pronoun> could unleash <possessive_pronoun> creativity."
+            },
+            {
+              "name": "Love",
+              "description": "<pronoun> has a repressed desire for love and wants to find a meaningful and fulfilling romantic relationship. <pronoun> feels held back by <possessive_pronoun> insecurities or lack of opportunities, and wishes <pronoun> could find someone who accepts and loves <object_pronoun> for who <pronoun> is."
+            },
+            {
+              "name": "Independence",
+              "description": "<pronoun> has a repressed desire for independence and wants to live <possessive_pronoun> own life and make <possessive_pronoun> own decisions. <pronoun> feels held back by <possessive_pronoun> dependence on others or lack of resources, and wishes <pronoun> could be more self-sufficient."
+            },
+            {
+              "name": "Connection desire",
+              "description": "<pronoun> has a desire for connection and wants to find deep and meaningful relationships. <pronoun> feels repressed by <possessive_pronoun> lack of social support and wants to find people who <pronoun> can truly connect with."
+            },
+            {
+              "name": "Travel desire",
+              "description": "<pronoun> has a desire to travel and wants to explore new places and cultures. <pronoun> feels repressed by <possessive_pronoun> lack of opportunity to travel and wants to break free and see the world."
+            },
+            {
+              "name": "Passion desire",
+              "description": "<pronoun> has a desire to pursue <possessive_pronoun> passions and wants to follow <possessive_pronoun> heart and interests. <pronoun> feels repressed by <possessive_pronoun> responsibilities and wants to explore <possessive_pronoun> passions and find <possessive_pronoun> purpose in life."
+            }
+          ]
+        },
+        "positive qualities": {
+          "type": "randomChoice",
+          "choicesType": "characteristic",
+          "min": 0,
+          "max" : 2,
+          "nullable": true,
+          "choices": [
+            {
+              "name": "Kindness",
+              "description": "<pronoun> is kind and always tries to help others. <pronoun> is considerate of others' feelings and goes out of <possessive_pronoun> way to be kind and compassionate."
+            },
+            {
+              "name": "Patience",
+              "description": "<pronoun> is patient and able to tolerate delays or difficulties without becoming annoyed or upset. <pronoun> is understanding and willing to wait for things to happen in their own time."
+            },
+            {
+              "name": "Honesty",
+              "description": "<pronoun> is honest and always tells the truth. <pronoun> is trustworthy and reliable, and people know that they can count on <object_pronoun> to be honest with them."
+            },
+            {
+              "name": "Generosity",
+              "description": "<pronoun> is generous and always willing to give of herself to others. <pronoun> is selfless and gives freely of <possessive_pronoun> time, energy, and resources to help others."
+            },
+            {
+              "name": "Loyalty",
+              "description": "<pronoun> is loyal and always stands by <possessive_pronoun> friends and loved ones. <pronoun> is reliable and trustworthy, and people know that they can count on <object_pronoun> to be there for them when they need <object_pronoun>."
+            },
+            {
+              "name": "Empathy",
+              "description": "<pronoun> is empathetic and able to understand and share the feelings of others. <pronoun> is compassionate and able to put himself in others' shoes, and is able to offer support and understanding to those in need."
+            },
+            {
+              "name": "Gratefulness",
+              "description": "<pronoun> is grateful and always thankful for what <pronoun> has. <pronoun> is appreciative of the blessings in <possessive_pronoun> life and is quick to show <possessive_pronoun> gratitude to others."
+            },
+            {
+              "name": "Optimism",
+              "description": "<pronoun> is optimistic and always looks on the bright side of things. <pronoun> is hopeful and positive, and is able to find the good in every situation."
+            },
+            {
+              "name": "Selflessness",
+              "description": "<pronoun> is selfless and always puts the needs of others before <object_pronoun> own. <pronoun> is unselfish and willing to make sacrifices for the benefit of others."
+            },
+            {
+              "name": "Respect",
+              "description": "<pronoun> is respectful and always treats others with kindness and consideration. <pronoun> is polite and courteous, and is able to show respect for others' beliefs and opinions."
+            },
+            {
+              "name": "Dependability",
+              "description": "<pronoun> is dependable and always follows through on <possessive_pronoun> commitments. <pronoun> is reliable and trustworthy, and people know that they can count on <object_pronoun> to do what <pronoun> says <pronoun> will do."
+            }
+          ]
+        },
+        "negative qualities": {
+          "type": "randomChoice",
+          "choicesType": "characteristic",
+          "min" : 0,
+          "max" : 2,
+          "nullable": true,
+          "choices": [
+            {
+              "name": "Anger",
+              "description": "<pronoun> has a quick temper and is prone to anger. <pronoun> has difficulty controlling <possessive_pronoun> emotions and may lash out or become aggressive when upset."
+            },
+            {
+              "name": "Jealousy",
+              "description": "<pronoun> is jealous and envious of others' success or possessions. <pronoun> is resentful of others' good fortune and may try to undermine or sabotage their success."
+            },
+            {
+              "name": "Greed",
+              "description": "<pronoun> is greedy and always wants more. <pronoun> is never satisfied with what <pronoun> has and is constantly seeking more wealth, power, or material possessions."
+            },
+            {
+              "name": "Laziness",
+              "description": "<pronoun> is lazy and avoids work or effort whenever possible. <pronoun> is unmotivated and unwilling to put in the effort required to achieve <possessive_pronoun> goals."
+            },
+            {
+              "name": "Arrogance",
+              "description": "<pronoun> is arrogant and conceited. <pronoun> thinks highly of himself and looks down on others, believing himself to be superior."
+            },
+            {
+              "name": "Narcissism",
+              "description": "<pronoun> is narcissistic and only concerned with herself. <pronoun> is self-absorbed and has an excessive interest in <possessive_pronoun> own appearance, accomplishments, and well-being."
+            },
+            {
+              "name": "Dishonesty",
+              "description": "<pronoun> is dishonest and untrustworthy. <pronoun> is not truthful and may lie or deceive others for <possessive_pronoun> own benefit."
+            },
+            {
+              "name": "Irresponsibility",
+              "description": "<pronoun> is irresponsible and unreliable. <pronoun> is not dependable and may neglect <possessive_pronoun> duties or obligations."
+            },
+            {
+              "name": "Disrespect",
+              "description": "<pronoun> is disrespectful and lacks regard for others. <pronoun> may be rude or inconsiderate towards others and may ignore their feelings or opinions."
+            },
+            {
+              "name": "Vanity",
+              "description": "<pronoun> is vain and excessively concerned with <possessive_pronoun> own appearance. <pronoun> is self-absorbed and may prioritize <possessive_pronoun> appearance above all else."
+            },
+            {
+              "name": "Impatience",
+              "description": "<pronoun> is impatient and has difficulty waiting for things to happen. <pronoun> may become easily frustrated or annoyed when things don't happen quickly enough."
+            },
+            {
+              "name": "Intolerance",
+              "description": "<pronoun> is intolerant and unwilling to accept or respect the beliefs or opinions of others. <pronoun> may be closed-minded and unwilling to consider other viewpoints."
+            },
+            {
+              "name": "Hypocrisy",
+              "description": "<pronoun> is hypocritical and says one thing but does another. <pronoun> may preach certain values or beliefs, but <possessive_pronoun> actions do not align with these values."
+            },
+            {
+              "name": "Inconsideration",
+              "description": "<pronoun> is inconsiderate and lacks consideration for others. <pronoun> may be thoughtless or careless towards others and their feelings."
+            },
+            {
+              "name": "Irritability",
+              "description": "<pronoun> is irritable and prone to being easily annoyed or agitated. <pronoun> has a short fuse and may become easily frustrated or upset."
+            }
+          ]
+        },
+        "quirks": {
+          "type": "randomChoice",
+          "choicesType": "characteristic",
+          "min": 0,
+          "max" : 2,
+          "nullable": true,
+          "choices": [
+            {
+              "name": "Biting nails",
+              "description": "<pronoun> has a habit of biting <possessive_pronoun> nails when <pronoun> is anxious or stressed. <pronoun> may chew on <possessive_pronoun> nails or cuticles as a coping mechanism."
+            },
+            {
+              "name": "Twirling hair",
+              "description": "<pronoun> has a habit of twirling <possessive_pronoun> hair when <pronoun> is deep in thought or feeling anxious. <pronoun> may twist or twirl <possessive_pronoun> hair around <possessive_pronoun> finger as a way to cope with stress."
+            },
+            {
+              "name": "Pacing",
+              "description": "<pronoun> has a habit of pacing when <pronoun> is anxious or thinking. <pronoun> may walk back and forth in a room or space as a way to think through a problem or decision."
+            },
+            {
+              "name": "Fidgeting",
+              "description": "<pronoun> has a habit of fidgeting when <pronoun> is anxious or bored. <pronoun> may tap <possessive_pronoun> foot, twirl a pen, or play with <possessive_pronoun> fingers as a way to release nervous energy."
+            },
+            {
+              "name": "Nail-picking",
+              "description": "<pronoun> has a habit of picking at <possessive_pronoun> nails or cuticles when <pronoun> is anxious or stressed. <pronoun> may peel or pick at the skin around <possessive_pronoun> nails as a coping mechanism."
+            },
+            {
+              "name": "Pen-clicking",
+              "description": "<pronoun> has a habit of clicking a pen when <pronoun> is deep in thought or feeling anxious. <pronoun> may click the pen repeatedly as a way to cope with stress or to help <possessive_pronoun> think."
+            },
+            {
+              "name": "Whistling",
+              "description": "<pronoun> has a habit of whistling when <pronoun> is in a good mood or feeling cheerful. <pronoun> may whistle tunes or melodies to himself as a way to express <possessive_pronoun> happiness."
+            },
+            {
+              "name": "Chewing gum",
+              "description": "<pronoun> has a habit of chewing gum when <pronoun> is feeling anxious or stressed. <pronoun> may chew gum as a way to cope with <possessive_pronoun> emotions or to help <possessive_pronoun> focus."
+            },
+            {
+              "name": "Humming",
+              "description": "<pronoun> has a habit of humming when <pronoun> is deep in thought or feeling content. <pronoun> may hum tunes or melodies to himself as a way to express <possessive_pronoun> feelings."
+            },
+            {
+              "name": "Foot-tapping",
+              "description": "<pronoun> has a habit of tapping <possessive_pronoun> foot when <pronoun> is feeling anxious or restless. <pronoun> may tap <possessive_pronoun> foot repeatedly as a way to release nervous energy."
+            },
+            {
+              "name": "Finger-tapping",
+              "description": "<pronoun> has a habit of tapping <possessive_pronoun> fingers when <pronoun> is feeling anxious or impatient. <pronoun> may tap <possessive_pronoun> fingers on a surface or against <possessive_pronoun> leg as a way to release nervous energy."
+            },
+            {
+              "name": "Hair-twirling",
+              "description": "<pronoun> has a habit of twirling <possessive_pronoun> hair when <pronoun> is feeling anxious or nervous. <pronoun> may twirl <possessive_pronoun> hair around <possessive_pronoun> finger as a way to cope with <possessive_pronoun> emotions."
+            }
+          ]
+        }
+      }
+    },
+    "Config": {
+      "name": "Contemporany"
+    }
+  }
