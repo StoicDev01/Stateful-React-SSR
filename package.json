@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "scripts": {
     "build" : "cd ./frontend && yarn build",
-    "install" : "cd ./frontend && yarn install && cd ../backend && yarn install",
-
+    "install" : "yarn install:backend & yarn install:frontend & wait",
+    "install:frontend" : "cd ./frontend && yarn install",
+    "install:backend" : "cd ./backend && yarn install",
 
     "start:frontend" : "cd ./frontend && yarn start",
     "start:backend" : "cd ./backend && yarn start",
