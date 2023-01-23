@@ -1,6 +1,9 @@
 {
     "name": "web-generator",
     "version": "1.0.0",
+    "engines": {
+      "node": "18"
+    },
     "scripts": {
       "dev": "NODE_ENV=development tsx ./server.ts",
       "build": "yarn run build:client && yarn run build:server",
