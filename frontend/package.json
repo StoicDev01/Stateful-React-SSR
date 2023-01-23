@@ -38,9 +38,8 @@
       "@types/node-schedule": "^2.1.0",
       "tsx": "^3.12.2",
       "@types/compression": "^1.7.2",
-      "@vitejs/plugin-react": "workspace:*",
-      "serve-static": "^1.15.0",
-      "ts-node": "^10.9.1"
+      "@vitejs/plugin-react": "3.0.1",
+      "serve-static": "^1.15.0"
     }
   }
   
