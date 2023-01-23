@@ -1,10 +1,10 @@
 import { AppBar, Container, Toolbar, Typography, Box, Button, Stack } from "@mui/material"
 import { BiMenu } from "react-icons/bi"
-import Link from "next/link"
-
+import Link from "./Link"
+import { name } from "../../config"
 
 interface NavigationBarProps{
-    sitePages : { 
+    pages : { 
         name : string,
         href : string
     }[]
@@ -18,7 +18,7 @@ export default function NavigationBar(props : NavigationBarProps ){
                 <Toolbar>
 
                     {/* Medium window sizes */}
-                    <Link href="/">
+                    <Link to="/">
                         <Typography
                             variant="h1"
                             noWrap
@@ -32,7 +32,7 @@ export default function NavigationBar(props : NavigationBarProps ){
                                 textDecoration : "none"
                             }}
                         >
-                            TheForge
+                            {name}
                         </Typography>
                     </Link>
 
@@ -42,8 +42,8 @@ export default function NavigationBar(props : NavigationBarProps ){
                             display: { xs: 'none', md: 'flex' } 
                         }}
                     >
-                        {props.sitePages.map((page ) => (
-                            <Link href={`${page.href}`} key={page.name}>
+                        {props.pages.map((page ) => (
+                            <Link to={`${page.href}`} key={page.name}>
                                 <Button
                                     sx={{
                                         my: 2, 
@@ -64,7 +64,7 @@ export default function NavigationBar(props : NavigationBarProps ){
                     </Box>
 
                     { /* Small Window Sizes */}
-                    <Link href="/">
+                    <Link to="/">
                         <Typography
                                 variant="h1"
                                 noWrap
@@ -78,7 +78,7 @@ export default function NavigationBar(props : NavigationBarProps ){
                                     textDecoration : "none"
                                 }}
                             >
-                                TheForge
+                                {name}
                         </Typography>
                     </Link>
                         

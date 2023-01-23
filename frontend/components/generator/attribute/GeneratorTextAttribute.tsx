@@ -122,7 +122,7 @@ export default class TextFieldAttribute extends React.Component<Props, State>{
                         id={this.props.name} label="Standard" variant="standard"
                         value={
                             typeof this.state.value === "number" ? 
-                            this.state.value.toPrecision(3) : this.state.value || ""
+                            this.state.value.toPrecision(3) : (this.state.value || "")
                         }
                         onChange={this.onEditInput}
                         sx={{

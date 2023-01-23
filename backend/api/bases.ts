@@ -1,11 +1,10 @@
-import type { NextApiRequest, NextApiResponse } from "next"
-import { GlobalRef } from "../../src/GlobalRef";
-import { serverData, ServerData } from "../../src/ServerData";
+import {ServerData} from "../ServerData";
+import { Request, Response } from "express";
 
-export default async function handler(req : NextApiRequest, res : NextApiResponse){
+export default async function handler(req : Request, res : Response){
 
     if (req.method == "GET"){
-        const characterBases = serverData.characterBases;
+        const characterBases = ServerData.characterBases;
 
         if ( characterBases ){
             console.log(characterBases);

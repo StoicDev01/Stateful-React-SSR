@@ -1,0 +1,42 @@
+Arguments: 
+  /home/izkeas/.nvm/versions/node/v18.13.0/bin/node /usr/bin/yarn add typescript
+
+PATH: 
+  /usr/bin/google-cloud-sdk/bin:/home/izkeas/.fly/bin:/home/izkeas/.nvm/versions/node/v18.13.0/bin:/home/izkeas/.local/bin:/home/izkeas/dotnet:/home/izkeas/.bun/bin:/home/izkeas/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/opt/android-sdk/cmdline-tools/latest/bin:/opt/android-sdk/platform-tools:/opt/android-sdk/tools:/opt/android-sdk/tools/bin:/opt/cuda/bin:/opt/cuda/nsight_compute:/opt/cuda/nsight_systems/bin:/home/izkeas/.dotnet/tools:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/var/lib/snapd/snap/bin
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  18.13.0
+
+Platform: 
+  linux x64
+
+Trace: 
+  SyntaxError: /home/izkeas/Projects/web/web-generator/package.json: Unexpected string in JSON at position 128
+      at JSON.parse (<anonymous>)
+      at /usr/lib/node_modules/yarn/lib/cli.js:1629:59
+      at Generator.next (<anonymous>)
+      at step (/usr/lib/node_modules/yarn/lib/cli.js:310:30)
+      at /usr/lib/node_modules/yarn/lib/cli.js:321:13
+
+npm manifest: 
+  {
+    "name": "web-generator",
+    "version": "1.0.0",
+    "main": "index.js",
+    "scripts": {
+      "dev" : "NODE_ENV=development "
+      "start" : ""
+    },
+    "repository": "git@github.com:izkeas/TheForge.git",
+    "author": "izkeas <izkeasyomito@gmail.com>",
+    "license": "MIT"
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

@@ -1,13 +1,12 @@
-import { NextApiRequest, NextApiResponse } from "next";
-import {CharacterData} from "../../../lib/generator/src/Character";
-import { CharacterDescription } from "../../../lib/generator/src/Description";
+import { CharacterDescription } from "../../lib/generator/src/Description"
+import { Request, Response } from "express";
 
 interface Data {
     result : string;
     description : object;
 }
 
-export default function Description(req : NextApiRequest, res : NextApiResponse<Data>){
+export default function Description(req : Request, res : Response<Data>){
     if (req.method == "POST"){
         if (typeof req.body.character === "object"){
             const description = new CharacterDescription(req.body.character);

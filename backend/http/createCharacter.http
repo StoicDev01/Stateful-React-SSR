@@ -1,0 +1,7 @@
+POST http://localhost:3001/api/create/character
+Accept: application/json
+Content-Type:  application/json
+
+{
+    "baseName" : "Contemporany"
+}

@@ -1,11 +1,13 @@
-import CharacterBase, { NameGeneratorGenderGroup } from "../frontend/components/lib/generator/src/CharacterBase";
-import NameGenerator from "../frontend/components/lib/generator/src/NameGenerator";
-
+import CharacterBase, { NameGeneratorGenderGroup } from "./lib/generator/src/CharacterBase"
+import NameGenerator from "./lib/generator/src/NameGenerator";
 import Fauna from "faunadb"
-import Character from "../frontend/components/lib/generator/src/Character";
-
+import Character from "./lib/generator/src/Character";
 import Schedule from "node-schedule"
 import { GlobalRef } from "./GlobalRef";
+
+dotenv.config();
+
+console.log(process.env.FAUNADB_SERVER);
 
 interface DataLoad {
     load : (faunadbClient : Fauna.Client) => void;
@@ -14,6 +16,11 @@ interface DataLoad {
 interface CharacterQueueData {
     character : Character;
     time : number;
+}
+
+interface Feedback{ 
+    user : string;
+    message : string;
 }
 
 class CharacterBasesData extends Map<string, CharacterBase> implements DataLoad {
@@ -31,19 +38,28 @@ class CharacterBasesData extends Map<string, CharacterBase> implements DataLoad 
             )
         )
 
+        const queriesPromises = [];
+
         for (const baseRef of basesRef.data as Array<any>){
-            const { data } : any = await faunadbClient.query(
+            const promise =  faunadbClient.query(
                 Fauna.Get(baseRef)
             );
-                
-            const baseName = data.Config.name;
-            const base = new CharacterBase();
 
-            console.log(`> Loading base : ${baseName}`);
-
-            base.loadJson(data);
-            this.set(baseName, base);
+            queriesPromises.push(promise);
         }
+
+        await Promise.all(queriesPromises).then((queries) => {
+            for ( const query of queries){
+                const data = (query as any ).data;
+                const baseName = data.Config.name;
+                const base = new CharacterBase();
+    
+                console.log(`> Loading base : ${baseName}`);
+    
+                base.loadJson(data);
+                this.set(baseName, base);
+            }
+        })
     }
 }
 
@@ -62,41 +78,50 @@ class NameGeneratorsData extends Map<string,  NameGeneratorGenderGroup>  impleme
             )
         )
 
+        let queriesPromises : Promise<Object>[] = new Array<Promise<Object>>();
+
         for (const nameDatasetRef of namesDatasets.data as Array<any>){
-            const { data } : any = await faunadbClient.query(
+            const promise  = faunadbClient.query(
                 Fauna.Get(nameDatasetRef)
             );
-                
-            const datasetName = data.name;
-
-            const nameGeneratorData : NameGeneratorGenderGroup = {
-                neuter : undefined,
-                male : undefined,
-                female : undefined
-            }
-
-            console.log(`> Loading Names Dataset : ${datasetName}`);
-            
-            if (data.neuterNames){
-                const newNameGenerator = new NameGenerator();
-                newNameGenerator.loadText(data.neuterNames);
-                nameGeneratorData.neuter = newNameGenerator;
-            }
-            
-            if (data.maleNames){
-                const newNameGenerator = new NameGenerator();
-                newNameGenerator.loadText(data.maleNames);
-                nameGeneratorData.neuter = newNameGenerator;            
-            }
-
-            if (data.femaleNames){
-                const newNameGenerator = new NameGenerator();
-                newNameGenerator.loadText(data.femaleNames);
-                nameGeneratorData.neuter = newNameGenerator;            
-            }
-
-            this.set(datasetName, nameGeneratorData);
+            queriesPromises.push(promise);
         }
+
+        await Promise.all(queriesPromises).then( ( queries : any[]) => {
+            queries.forEach( (query) => {
+                const data = query.data;
+                const datasetName = data.name;
+        
+                const nameGeneratorData : NameGeneratorGenderGroup = {
+                    neuter : undefined,
+                    male : undefined,
+                    female : undefined
+                }
+        
+                console.log(`> Loading Names Dataset : ${datasetName}`);
+                
+                if (data.neuterNames){
+                    const newNameGenerator = new NameGenerator();
+                    newNameGenerator.loadText(data.neuterNames);
+                    nameGeneratorData.neuter = newNameGenerator;
+                }
+                
+                if (data.maleNames){
+                    const newNameGenerator = new NameGenerator();
+                    newNameGenerator.loadText(data.maleNames);
+                    nameGeneratorData.male = newNameGenerator;            
+                }
+        
+                if (data.femaleNames){
+                    const newNameGenerator = new NameGenerator();
+                    newNameGenerator.loadText(data.femaleNames);
+                    nameGeneratorData.female = newNameGenerator;            
+                }
+        
+                this.set(datasetName, nameGeneratorData);
+            });
+        });
+
     }
 }
 
@@ -137,49 +162,86 @@ class CharacterGenerationQueue{
     }
 }
 
-export class ServerData{
+export class ServerDataClass{
     private faunaClient : Fauna.Client;
-    characterBases : CharacterBasesData;
-    nameGenerators : NameGeneratorsData;
-    generatedCharacters : CharacterGenerationQueue;
+    private status : "loaded" | "unloaded" | "loading";
+
+    public characterBases : CharacterBasesData;
+    public nameGenerators : NameGeneratorsData ;
+    public generatedCharacters : CharacterGenerationQueue;
 
     constructor(){
-        console.log("> Starting Server Data!")
-        this.faunaClient = new Fauna.Client();
+        this.status = "unloaded";
+        this.faunaClient = new Fauna.Client({ secret : process.env.FAUNADB_SERVER || ""});    
         this.characterBases = new CharacterBasesData();
-        this.nameGenerators = new NameGeneratorsData();
         this.generatedCharacters = new CharacterGenerationQueue();
-    }
+        this.nameGenerators = new NameGeneratorsData();
 
-    static async create(){
-        const serverData = new ServerData()
-        serverData.connect();
-        await serverData.load();
-        return serverData;
-    }
-
-    connect(){
-        this.faunaClient = new Fauna.Client({ secret : process.env.FAUNADB_SERVER || ""});
         console.log("> CONNECTED TO FAUNADB!");
     }
 
     async load(){
+        console.log("> LOADING SERVER DATA...");
         const p1 = this.characterBases.load(this.faunaClient);
         const p2 = this.nameGenerators.load(this.faunaClient);
+        this.status = "loading";
 
-        await p1;
-        await p2;
+        await Promise.all([p1, p2]);
 
+        this.status = "loaded";
         console.log("> ServerData Loaded Successfully!");
+    }
+
+    getStatus(){
+        return this.status;
+    }
+
+    async postFeedBack(feedback : Feedback){
+        const hasCollection = await this.faunaClient.query(
+            Fauna.Exists(
+                Fauna.Collection("Feedbacks")
+            )
+        )
+
+        let collectionRef;
+
+        if (!hasCollection){
+            const createdCollection : any = await this.faunaClient.query(
+                Fauna.CreateCollection({
+                    name : "Feedbacks"
+                })
+            )
+
+            collectionRef = createdCollection.ref;
+        }
+        else{
+            const collection : any = await this.faunaClient.query(
+                Fauna.Get(
+                    Fauna.Collection("Feedbacks")
+                )
+            )
+            collectionRef = collection.ref;
+        }
+
+        await this.faunaClient.query(
+            Fauna.Create(
+                collectionRef,
+                {
+                    data : feedback
+                }
+            )
+        )
     }
 }
 
-const ServerDataRef = new GlobalRef<ServerData>("ServerData");
+import dotenv from "dotenv"
 
-if (!ServerDataRef.value){
-    ServerDataRef.value = new ServerData();
-    ServerDataRef.value.connect();
-    ServerDataRef.value.load();
+dotenv.config();
+
+const serverData = new GlobalRef<ServerDataClass>("ServerData");
+
+if (!serverData.value){
+    serverData.value = new ServerDataClass();
 }
 
-export const serverData = ServerDataRef.value;
+export const ServerData = serverData.value;

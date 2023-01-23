@@ -1,4 +1,4 @@
-import ComingSoon from "../../frontend/components/ComingSoon"
+import ComingSoon from "../../components/ComingSoon"
 
 export default function Story(){
     return <>

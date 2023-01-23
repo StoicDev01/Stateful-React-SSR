@@ -3,7 +3,6 @@ import {
     MenuItem
 }
 from "@mui/material";
-import { AppContext } from "next/app";
 import React from "react"
 
 interface Props {

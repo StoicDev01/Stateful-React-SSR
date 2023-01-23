@@ -1,14 +1,18 @@
-import * as Generator from "../../frontend/components/Generator"
-import { Config } from "../../frontend/components/generator/GeneratorConfigList"
+import * as Generator from "../../components/Generator"
+import { Config } from "../../components/generator/GeneratorConfigList"
 import React from "react"
 import ReactDOMServer from "react-dom/server";
-import {  Grid, Button, Box } from "@mui/material"
+import {  Grid, Button, Box, MenuItem } from "@mui/material"
 import { BiRotateRight, BiDownload } from "react-icons/bi"
-import { AppContext } from "next/app";
 import { merge } from "lodash"
 import { saveAs } from "file-saver"
+import { Select } from "@mui/material"
 
-import { server } from "../../config/config"
+import { frontendURL, backendURL } from "../../../config"
+
+interface Props{
+
+}
 
 // interfaces
 interface State {
@@ -19,9 +23,6 @@ interface State {
     characterJsonURL? : string;
     characterPdfURL? : string;
     characterHTMLURL? : string;
-}
-
-interface Props {
     base? : object;
     bases: string[];
 }
@@ -57,7 +58,7 @@ async function getBases() : Promise<Array<string> | undefined>{
         })
     };
 
-    const result = await (await fetch(`${server}/api/bases`, options)).json();
+    const result = await (await fetch(`${backendURL}/api/bases`, options)).json();
     return result.bases;
 }
 
@@ -76,7 +77,7 @@ async function createCharacter(baseName : string) :
         }),
     }
 
-    const result = await (await fetch(`${server}/api/create/character`, options)).json();
+    const result = await (await fetch(`${backendURL}/api/create/character`, options)).json();
     return result;
 }
 
@@ -96,7 +97,7 @@ async function editCharacter(characterID : string, editOptions : EditOptions) :
         }),
     }
 
-    const result = await (await fetch(`${server}/api/edit/character`, options)).json();
+    const result = await (await fetch(`${backendURL}/api/edit/character`, options)).json();
     return result;
 }
 
@@ -118,26 +119,32 @@ export default class CharacterGeneratorPage extends React.Component<Props, State
             description : {},
             character : undefined,
             characterID : "",
-            baseName : this.props.bases[0] ? this.props.bases[0] : ""
+            baseName : "undefined",
+            bases : [],
+            base : {}
         }
 
         this.descriptionComponentRef = React.createRef();
 
     }
-    
-    static async getInitialProps(context : AppContext){
+
+    async componentDidMount() {
         const bases = await getBases();
-        return {
-            bases : bases
+
+        if ( bases){
+            const firstBase = bases[0];
+    
+            this.setState({
+                bases : bases,
+                baseName : firstBase
+            });
+
+            await this.createCharacter(firstBase);
         }
     }
 
-    async componentDidMount() {
-        await this.createCharacter();
-    }
-
-    async createCharacter(){
-        const result = await createCharacter(this.state.baseName);
+    async createCharacter(baseName : string){
+        const result = await createCharacter(baseName);
 
         if (result){
             this.setState({
@@ -344,7 +351,7 @@ export default class CharacterGeneratorPage extends React.Component<Props, State
             >
                 <Generator.Header
                     name="CHARACTER GENERATOR"
-                    bases={this.props.bases}
+                    bases={this.state.bases}
                     value={this.state.baseName}
                 />
 
@@ -355,11 +362,11 @@ export default class CharacterGeneratorPage extends React.Component<Props, State
                         <Generator.ConfigList
                             base={{
                                 onEdit : this.onEditBase,
-                                values : this.props.bases,
+                                values : this.state.bases,
                                 value : this.state.baseName
                             }}
-
                         />
+
                         <Generator.AttributesList
                             attributes={this.state.character?.AttributeGroups}
                             onGenerateAttribute={this.onGenerateAttribute}

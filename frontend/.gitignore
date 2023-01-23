@@ -1,0 +1,5 @@
+node_modules
+dist
+!dist/server/entry-server.js
+yarn.lock
+yarn-error.log

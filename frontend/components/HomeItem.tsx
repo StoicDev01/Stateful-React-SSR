@@ -2,7 +2,7 @@ import Paper from '@mui/material/Paper';
 import React from "react"
 import { IconType } from "react-icons"
 import {Grid, Typography} from "@mui/material"
-import Link from "next/link"
+import Link from './Link';
 
 interface itemProps {
     type : string,
@@ -21,7 +21,7 @@ export default function HomeItem( props : itemProps){
                 }}
                 >
                 
-                <Link href={props.href}>
+                <Link to={props.href}>
                     {
                         props.icon  && ( 
                             <props.icon

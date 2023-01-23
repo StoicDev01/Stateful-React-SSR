@@ -1,9 +1,8 @@
-import type { NextApiRequest, NextApiResponse } from 'next'
-import CharacterBase, { NameGeneratorGenderGroup } from "../../../lib/generator/src/CharacterBase"
-import Character from '../../../lib/generator/src/Character';
-import { CharacterDescription } from '../../../lib/generator/src/Description';
+import CharacterBase, { NameGeneratorGenderGroup } from "../../lib/generator/src/CharacterBase"
+import Character from '../../lib/generator/src/Character';
 import { v4 as uuid } from "uuid"
-import { serverData } from "../../../src/ServerData";
+import { ServerData } from "../../ServerData";
+import { Request, Response } from "express";
 
 type Data = {
     result : string;
@@ -14,8 +13,8 @@ type Data = {
 
 
 export default async function createCharacter(
-  req: NextApiRequest,
-  res: NextApiResponse<Data>
+  req: Request,
+  res: Response<Data>
 ) {
 
     if (req.headers['content-type'] != "application/json"){
@@ -24,9 +23,9 @@ export default async function createCharacter(
     }
 
     if (req.method == "POST"){
-        if (typeof req.body.baseName == "string"){
-            const characterBases = serverData.characterBases;
-            const nameGenerators = serverData.nameGenerators;
+        if (typeof req.body === "object" && typeof req.body.baseName == "string"){
+            const characterBases = ServerData.characterBases;
+            const nameGenerators = ServerData.nameGenerators;
             const baseName = req.body.baseName;
 
             if (characterBases && nameGenerators && characterBases.has(baseName)){
@@ -39,7 +38,7 @@ export default async function createCharacter(
                 const character = new Character(loadedBase);
                 const characterId = uuid();
 
-                serverData.generatedCharacters.AddToQueue(characterId, character);
+                ServerData.generatedCharacters.AddToQueue(characterId, character);
 
                 res.status(200).json({ 
                     result : "Success!", 

@@ -1,6 +1,6 @@
-import type { NextApiRequest, NextApiResponse } from 'next'
-import { CharacterDescription } from '../../../lib/generator/src/Description';
-import { serverData } from '../../../src/ServerData';
+import { CharacterDescription } from '../../lib/generator/src/Description';
+import {ServerData} from '../../ServerData';
+import { Request, Response } from 'express';
 
 type Data = {
     result : string;
@@ -10,8 +10,8 @@ type Data = {
 }
 
 export default async function createCharacter(
-  req: NextApiRequest,
-  res: NextApiResponse<Data>
+  req: Request,
+  res: Response<Data>
 ) {
     if (req.headers['content-type'] != "application/json"){
         res.status(400).json({result : "Content type must be JSON!"});
@@ -19,7 +19,7 @@ export default async function createCharacter(
     }
 
     if (req.method == "POST"){
-        const characterQueue = serverData.generatedCharacters;
+        const characterQueue = ServerData.generatedCharacters;
         const characterID = req.body.characterID;
         const editOptions = req.body.editOptions;
 
