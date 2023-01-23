@@ -38,7 +38,7 @@ class CharacterBasesData extends Map<string, CharacterBase> implements DataLoad 
             )
         )
 
-        const queriesPromises = [];
+        const queriesPromises : Array<Promise<any>>= [];
 
         for (const baseRef of basesRef.data as Array<any>){
             const promise =  faunadbClient.query(

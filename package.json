@@ -1,8 +1,6 @@
 {
   "name": "web-generator",
   "version": "1.0.0",
-  "type": "module",
-  "module": "esnext",
   "scripts": {
     "build" : "cd ./frontend && yarn build",
 
@@ -10,8 +8,8 @@
     "start:backend" : "cd ./backend && yarn start",
     "start": "yarn start:backend & yarn start:frontend & wait",
     
-    "dev:backend" : "cd ./frontend && yarn dev",
-    "dev:frontend" : "cd ./backend && yarn dev",
+    "dev:frontend" : "cd ./frontend && yarn dev",
+    "dev:backend" : "cd ./backend && yarn dev",
     "dev" : "yarn dev:backend & yarn dev:frontend & wait"
   },
   "repository": "git@github.com:izkeas/TheForge.git",

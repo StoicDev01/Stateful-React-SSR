@@ -1,35 +1,35 @@
 {
-    "name": "web-generator",
-    "version": "1.0.0",
-    "scripts": {
-      "dev": "tsx --watch Server.ts",
-      "start" : "tsx Server.ts"
-    },
-    "repository": "git@github.com:izkeas/TheForge.git",
-    "author": "izkeas <izkeasyomito@gmail.com>",
-    "license": "MIT",
-    "dependencies": {
-      "body-parser": "^1.20.1",
-      "cors": "^2.8.5",
-      "faunadb": "^4.7.1",
-      "glob": "^8.1.0",
-      "node-schedule": "^2.1.1",
-      "uuid": "^9.0.0",
-      "@types/lodash": "^4.14.191",
-      "lodash": "^4.17.21"
-    },
-    "devDependencies": {
-      "tsc": "^2.0.4",
-      "typescript": "^4.9.4",
-      "@types/cors": "^2.8.13",
-      "@types/glob": "^8.0.1",
-      "@types/node-schedule": "^2.1.0",
-      "@types/uuid": "^9.0.0",
-      "tsx": "^3.12.2",
-      "@types/compression": "^1.7.2",
-      "compression": "^1.7.4",
-      "express": "^4.18.2",
-      "serve-static": "^1.15.0"
-    }
+  "name": "web-generator",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "tsx --watch Server.ts",
+    "start": "tsx Server.ts"
+  },
+  "repository": "git@github.com:izkeas/TheForge.git",
+  "author": "izkeas <izkeasyomito@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@types/lodash": "^4.14.191",
+    "body-parser": "^1.20.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "faunadb": "^4.7.1",
+    "glob": "^8.1.0",
+    "lodash": "^4.17.21",
+    "node-schedule": "^2.1.1",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "tsc": "^2.0.4",
+    "typescript": "^4.9.4",
+    "@types/cors": "^2.8.13",
+    "@types/glob": "^8.0.1",
+    "@types/node-schedule": "^2.1.0",
+    "@types/uuid": "^9.0.0",
+    "tsx": "^3.12.2",
+    "@types/compression": "^1.7.2",
+    "compression": "^1.7.4",
+    "express": "^4.18.2",
+    "serve-static": "^1.15.0"
   }
-  
+}
