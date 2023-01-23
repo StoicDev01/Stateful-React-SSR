@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "scripts": {
       "dev": "NODE_ENV=development tsx ./server.ts",
-      "build": "npm run build:client && npm run build:server",
+      "build": "yarn run build:client && yarn run build:server",
       "build:client": "vite build --outDir dist/client",
       "build:server": "vite build --ssr entry-server.tsx --outDir dist/server",
       "generate": "vite build --outDir dist/static && npm run build:server && node prerender",
