@@ -5,6 +5,11 @@ import { ServerData } from "./ServerData.js";
 import cors from "cors"
 import bodyParser from "body-parser";
 
+import path from "path"
+import { fileURLToPath } from 'url';
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 const isDev = process.env.NODE_ENV !== "production"
 const server = Express();
 
@@ -15,11 +20,18 @@ if (isDev){
 async function apiRouter(){
   const apiRouter = Router();
 
-  const files = glob.sync("./api/**/*.ts");
+  if (isDev){
+    process.chdir("./src");
+  }
+  else{
+    process.chdir("./dist");
+  }
+
+  const files = glob.sync(`./api/**/*.*s`);
 
   for (const apiFile of files){
     const apiPath = apiFile.replaceAll(/(^.)|(api\/)|(\.ts$)/g, "");
-    const apiModulePath = apiFile.replaceAll(/(\.ts$)/g, "");
+    const apiModulePath = (apiFile.replaceAll(/(\.ts$)/g, "")  + ".js");
     const apiModule = await import(apiModulePath);
 
     if (apiModule.default){

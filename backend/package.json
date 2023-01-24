@@ -2,9 +2,14 @@
   "name": "web-generator",
   "version": "1.0.0",
   "type": "module",
+  "module": "es2022",
+  "tsup" : {
+    "format" : "esm",
+    "target" : "es2022"
+  },
   "scripts": {
     "dev": "tsx --watch Server.ts",
-    "build": "",
+    "build": "tsup src/*.ts src/api src/lib/generator/src",
     "start": "tsx Server.ts"
   },
   "repository": "git@github.com:izkeas/TheForge.git",

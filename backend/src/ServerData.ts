@@ -7,8 +7,6 @@ import { GlobalRef } from "./GlobalRef.js";
 
 dotenv.config();
 
-console.log(process.env.FAUNADB_SERVER);
-
 interface DataLoad {
     load : (faunadbClient : Fauna.Client) => void;
 }
