@@ -1,0 +1,1 @@
+/home/izkeas/Projects/web/web-generator/config.ts

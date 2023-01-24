@@ -1,9 +1,0 @@
-{
-  "compilerOptions": {
-    "target": "ES2022",                                  /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */
-    "module": "CommonJS",                                /* Specify what module code is generated. */
-    "outDir": "./build",
-    "moduleResolution": "node",
-    "esModuleInterop": true
-  }
-}
