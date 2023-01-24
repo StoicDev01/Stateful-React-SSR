@@ -8,9 +8,9 @@
     "target" : "es2022"
   },
   "scripts": {
-    "dev": "tsx --watch Server.ts",
+    "dev": "tsx --watch ./src/Server.ts",
     "build": "tsup src/*.ts src/api src/lib/generator/src",
-    "start": "tsx Server.ts"
+    "start": "node dist/Server.js"
   },
   "repository": "git@github.com:izkeas/TheForge.git",
   "author": "izkeas <izkeasyomito@gmail.com>",

@@ -2,7 +2,10 @@
   "name": "web-generator",
   "version": "1.0.0",
   "scripts": {
-    "build" : "cd ./frontend && yarn build",
+    "build" : "yarn build:frontend & yarn build:backend & wait",
+    "build:frontend" : "cd ./frontend && yarn build",
+    "build:backend" : "cd ./backend && yarn build",
+
     "install" : "yarn install:backend & yarn install:frontend & wait",
     "install:frontend" : "cd ./frontend && yarn install",
     "install:backend" : "cd ./backend && yarn install",
