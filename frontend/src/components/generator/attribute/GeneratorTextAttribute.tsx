@@ -101,7 +101,11 @@ export default class TextFieldAttribute extends React.Component<Props, State>{
         }
     }
 
+    
     render(): React.ReactNode {
+        let textFieldValue = typeof this.state.value === "number" ? this.state.value.toPrecision(3) : this.state.value;
+        textFieldValue = textFieldValue ? textFieldValue : "";
+
         return (
             <Grid container>
                 <Grid item xs={6} sm={6}>
@@ -120,16 +124,14 @@ export default class TextFieldAttribute extends React.Component<Props, State>{
                 <Grid item xs={5} sm={5}>
                     <TextField 
                         id={this.props.name} label="Standard" variant="standard"
-                        value={
-                            typeof this.state.value === "number" ? 
-                            this.state.value.toPrecision(3) : (this.state.value || "")
-                        }
+                        value={textFieldValue}
                         onChange={this.onEditInput}
                         sx={{
                             margin : 0,
                             padding : 0
                         }}
-                    />
+                        InputLabelProps={{shrink : textFieldValue !== "" || textFieldValue !== undefined}}
+                        />
                 </Grid>
     
                 <Grid item xs={1} sm={1}
