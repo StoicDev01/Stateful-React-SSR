@@ -2,27 +2,24 @@
   "name": "web-generator",
   "version": "1.0.0",
   "scripts": {
-    "build" : "yarn build:frontend & yarn build:backend & wait",
-    "build:frontend" : "cd ./frontend && yarn build",
-    "build:backend" : "cd ./backend && yarn build",
-
-    "install" : "yarn install:backend & yarn install:frontend & wait",
-    "install:frontend" : "cd ./frontend && yarn install",
-    "install:backend" : "cd ./backend && yarn install",
-
-    "start:frontend" : "cd ./frontend && yarn start",
-    "start:backend" : "cd ./backend && yarn start",
+    "build": "yarn build:frontend & yarn build:backend & wait",
+    "build:frontend": "cd ./frontend && yarn build",
+    "build:backend": "cd ./backend && yarn build",
+    "install": "yarn install:backend & yarn install:frontend & wait",
+    "install:frontend": "cd ./frontend && yarn install",
+    "install:backend": "cd ./backend && yarn install",
+    "start:frontend": "cd ./frontend && yarn start",
+    "start:backend": "cd ./backend && yarn start",
     "start": "yarn start:backend & yarn start:frontend & wait",
-    
-    "dev:frontend" : "cd ./frontend && yarn dev",
-    "dev:backend" : "cd ./backend && yarn dev",
-    "dev" : "yarn dev:backend & yarn dev:frontend & wait"
+    "dev:frontend": "cd ./frontend && yarn dev",
+    "dev:backend": "cd ./backend && yarn dev",
+    "dev": "yarn dev:backend & yarn dev:frontend & wait"
   },
   "repository": "git@github.com:izkeas/TheForge.git",
   "author": "izkeas <izkeasyomito@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "compression": "^1.7.4"
   },
-  "devDependencies": {
-  }
+  "devDependencies": {}
 }
