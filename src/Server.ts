@@ -2,7 +2,7 @@ import fs from 'fs'
 import Path from 'path'
 import { fileURLToPath } from 'url'
 import express, { Request, Response} from 'express'
-import { url, port } from './config.js'
+import { url, hostPort } from './config.js'
 import cors from "cors"
 import {ViteDevServer, createServer} from "vite"
 import { ServerData } from './ServerData.js'
@@ -125,7 +125,7 @@ async function main(
   // Render page
   server.use('*', async (req, res) => renderPage(req, res, viteServer, indexProd))
 
-  server.listen(port, () => {
+  server.listen(hostPort, () => {
     console.log("Started Server on : ", url);
   })
 
