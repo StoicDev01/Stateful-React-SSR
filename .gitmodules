@@ -1,0 +1,3 @@
+[submodule "src/backend/lib/generator"]
+	path = src/backend/lib/generator
+	url = git@github.com:izkeas/Generators.git

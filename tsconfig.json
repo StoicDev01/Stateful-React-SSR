@@ -1,0 +1,22 @@
+{
+    "compilerOptions": {
+        "module": "ES2022",
+        "target": "ES2022",
+        "moduleResolution": "node",
+        "allowSyntheticDefaultImports": true,
+        "esModuleInterop": true,
+        "jsx": "react",
+        "allowJs": true,
+        "types": ["vite/client"]
+    },
+    "include": [
+        "**/*.ts",
+        "**/*.tsx",
+        "../dist/**/*.js", "src/config.ts", "prerender.js", "server.js",
+    ],
+    "exclude": [
+        "node_modules",
+        "../dist/client",
+        "../dist/config.js"
+    ]
+}
