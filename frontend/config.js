@@ -1,4 +1,4 @@
-const dev = process.env.NODE_ENV !== 'production';
+export const dev = process.env.NODE_ENV !== 'production';
 
 /* CONFIGS */
 const productionHighPorts = true;       // Choose to use high ports like 3000 instead of 443 or 80
