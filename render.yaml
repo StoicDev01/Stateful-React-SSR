@@ -1,12 +1,12 @@
 services:
-  type : web
+- type : web
   name : ChaoticForge
   env : node
   branch : main
   routes : 
-    type : rewrite
+  - type : rewrite
     source : http:/localhost:3001/api/*
     destination : /api/*
-    type : rewrite
+  - type : rewrite
     source : http:/localhost:300/*
     destination : /*
