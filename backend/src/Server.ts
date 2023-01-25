@@ -31,7 +31,7 @@ async function apiRouter(){
 
   for (const apiFile of files){
     const apiPath = apiFile.replaceAll(/(^.)|(api\/)|(\.ts$)/g, "");
-    const apiModulePath = (apiFile.replaceAll(/(\.ts$)/g, "")  + ".js");
+    const apiModulePath = (apiFile.replaceAll(/(\.ts$)/g, ".js"));
     const apiModule = await import(apiModulePath);
 
     if (apiModule.default){
