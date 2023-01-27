@@ -1,11 +1,24 @@
 import HomeItem from "../components/HomeItem"
 import HomeMenu from "../components/HomeMenu";
-import { BiUserPlus, BiWorld, BiPencil } from "react-icons/bi/index.js"
-import React from "react";
+import { BiUserPlus, BiWorld, BiPencil, BiEdit } from "react-icons/bi/index.js"
+import React, { useState } from "react";
+import Feedback from "../components/FeedBack";
 
 export default function Home(){
+
+  const [ feedbackVisible, setFeedbackVisible ] = useState(false);
+
+  function onEnterFeedback(){
+    setFeedbackVisible(true);
+  }
+
+  function onExitFeedback(){
+    setFeedbackVisible(false)
+  }
   
   return (
+    <>
+      <Feedback visible={feedbackVisible} onClose={onExitFeedback}/>
       <HomeMenu>
         <HomeItem
           type="Character"
@@ -25,6 +38,13 @@ export default function Home(){
           icon={BiPencil}
           href="/create/story"
         />
+        <HomeItem
+          type="Feedback"
+          description='Submit Feedback to improve the site!'
+          icon={BiEdit}
+          onclick={onEnterFeedback}
+        />
       </HomeMenu>
+    </>
   );
 }

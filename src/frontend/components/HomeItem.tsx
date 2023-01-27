@@ -4,10 +4,11 @@ import {Grid, Paper, Typography} from "@mui/material"
 import Link from './Link';
 
 interface itemProps {
-    type : string,
-    description : string,
-    icon? : IconType,
-    href : string
+    type : string;
+    description : string;
+    icon? : IconType;
+    href? : string;
+    onclick? : (event : React.MouseEvent) => void;
   }
   
 export default function HomeItem( props : itemProps){
@@ -20,7 +21,7 @@ export default function HomeItem( props : itemProps){
                 }}
                 >
                 
-                <Link to={props.href}>
+                <Link to={props.href} onclick={props.onclick}>
                     {
                         props.icon  && ( 
                             <props.icon

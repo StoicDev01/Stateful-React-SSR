@@ -45,7 +45,7 @@ async function createViteServer(){
 }
 
 async function renderPage(req :Request, res : Response, viteServer? : ViteDevServer, index? : string) {
-    //try {
+    try {
       const url = req.originalUrl
       log(`${req.ip} Request page ${url}`);
 
@@ -75,15 +75,13 @@ async function renderPage(req :Request, res : Response, viteServer? : ViteDevSer
       const html = template.replace(`<!--app-html-->`, appHtml)
 
       res.status(200).set({ 'Content-Type': 'text/html' }).end(html)
-    /*
     } catch (e) {
-      if (vite){
-        !isProd && vite.ssrFixStacktrace(e as Error)
+      if (viteServer){
+        !isProd && viteServer.ssrFixStacktrace(e as Error)
         console.log((e as Error).stack)
         res.status(500).end((e as Error).stack)
       }
     }
-    */
 }
 
 async function main(

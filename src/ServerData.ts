@@ -17,8 +17,8 @@ interface CharacterQueueData {
 }
 
 interface Feedback{ 
-    user : string;
-    message : string;
+    name? : string;
+    description : string;
 }
 
 class CharacterBasesData extends Map<string, CharacterBase> implements DataLoad {
