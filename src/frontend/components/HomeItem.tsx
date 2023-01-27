@@ -1,7 +1,8 @@
 import React from "react"
 import { IconType } from "react-icons"
-import {Grid, Paper, Typography} from "@mui/material"
+import {Grid, Paper, Typography, Icon} from "@mui/material"
 import Link from './Link';
+import {useTheme} from "@mui/material";
 
 interface itemProps {
     type : string;
@@ -12,6 +13,8 @@ interface itemProps {
   }
   
 export default function HomeItem( props : itemProps){
+    const theme : any = useTheme();
+
     return (
         <Grid key={1} item>
             <Paper
@@ -24,16 +27,18 @@ export default function HomeItem( props : itemProps){
                 <Link to={props.href} onclick={props.onclick}>
                     {
                         props.icon  && ( 
-                            <props.icon
-                                style={{
-                                    marginTop : "20px",
-                                    marginLeft : "auto" ,
-                                    marginRight : "auto",
-                                    marginBottom: "0px",
-                                    width : "100%",
-                                    height : "80px"
-                                }}
-                            />
+
+                        <props.icon
+                            style={{
+                                marginTop : "20px",
+                                marginLeft : "auto" ,
+                                marginRight : "auto",
+                                marginBottom: "0px",
+                                width : "100%",
+                                height : "80px",
+                                color : theme.palette.primary.main
+                            }}
+                        />
                         )
                     }
 

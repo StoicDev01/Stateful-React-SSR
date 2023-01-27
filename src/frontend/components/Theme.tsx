@@ -98,16 +98,23 @@ export default createTheme({
   
   palette: {
     mode : "dark",
+
+    text : {
+      primary : "#f7f7f7",
+      secondary : "#888888",
+      disabled : "#888888"
+    },
     
     primary: {
-      light: '#757ce8',
-      main: '#3f50b5',
-      dark: '#002884',
+      light: '#fdc659',
+      main: '#b18631',
+      dark: '#8e6b27',
       contrastText: '#fff',
     },
 
     background : {
-      default : "#121212"
+      default : "#151515",
+      paper : "#101010"
     },
 
     secondary: {

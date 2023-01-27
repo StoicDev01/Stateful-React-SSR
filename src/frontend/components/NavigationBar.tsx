@@ -29,7 +29,7 @@ export default function NavigationBar(props : NavigationBarProps ){
                                 fontFamily : 'monospace',
                                 fontWeight : 700,
                                 letterSpacing : ".1rem",
-                                color: "inherit",
+                                color: "primary.light",
                                 textDecoration : "none"
                             }}
                         >
