@@ -34,7 +34,6 @@ function ConfigField(props : FieldProps){
             <Grid item xs={5} sm={5}>
                 <Select
                     value={props.value}
-                    label="Age"
                     onChange={ (event ) => {
                         props.onEdit(props.keyName, event.target.value);
                     }}

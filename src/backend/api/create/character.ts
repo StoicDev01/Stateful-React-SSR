@@ -30,7 +30,9 @@ export default async function createCharacter(
 
             if (characterBases && nameGenerators && characterBases.has(baseName)){
                 const loadedBase = characterBases.get(baseName) as CharacterBase;
-                const nameGenerator = nameGenerators.get("USNames") as NameGeneratorGenderGroup;
+                const baseConfig = loadedBase.data.Config;
+                const nameGeneratorNameConfig = (typeof baseConfig.namedataset == "string" && baseConfig.namedataset )|| "UsNames";
+                const nameGenerator = nameGenerators.get(nameGeneratorNameConfig) as NameGeneratorGenderGroup;
 
                 loadedBase.loadConfig({
                     nameGenerators : nameGenerator
