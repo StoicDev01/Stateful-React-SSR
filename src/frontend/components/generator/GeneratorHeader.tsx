@@ -7,8 +7,6 @@ from "@mui/material";
 
 interface Props {
     name : string;
-    bases : string[];
-    value : string;
 }
 
 interface States {

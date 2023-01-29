@@ -47,11 +47,9 @@ export default class TextFieldAttribute extends React.Component<Props, State>{
     }
 
     componentDidUpdate(prevProps: Readonly<Props>, prevState: Readonly<State>, snapshot?: any): void {
-        if (!isEqual(prevProps.value, this.props.value) ){
-            this.setState({
-                value  : this.props.value
-            });
-        }
+        this.setState({
+            value  : this.props.value
+        });
     }
 
     onEditInput(event : React.ChangeEvent<HTMLInputElement> ): void{

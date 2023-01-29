@@ -201,15 +201,13 @@ export default class CharacterGeneratorPage extends React.Component<Props, State
                 const characterPatch = result.patch;
                 let currentCharacter = this.state.character;
 
-                if ( currentCharacter !== undefined){
-                    const newCharacter = merge(currentCharacter, characterPatch);
+                const newCharacter = merge(currentCharacter, characterPatch);
 
-                    this.setState({
-                        character : newCharacter,
-                        description : result.description
-                    })
+                this.setState({
+                    character : newCharacter,
+                    description : result.description
+                })
 
-                }
             }
         }
     }
@@ -353,8 +351,6 @@ export default class CharacterGeneratorPage extends React.Component<Props, State
             >
                 <Generator.Header
                     name="CHARACTER GENERATOR"
-                    bases={this.state.bases}
-                    value={this.state.baseName}
                 />
 
                 <Generator.Container>
