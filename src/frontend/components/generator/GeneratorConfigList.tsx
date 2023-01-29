@@ -86,7 +86,7 @@ export default class ConfigList extends React.Component<Props>{
                                     keyName="Base"
                                     value={this.props.base.value}
                                     values={this.props.base.values}
-                                    onEdit={this.props.base.onEdit}
+                                    onEdit={ (base,newValue) => this.props.base.onEdit(newValue)}
                                 />
                             </Box>
                         </Box>
