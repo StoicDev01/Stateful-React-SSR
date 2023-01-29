@@ -3,3 +3,4 @@ dist
 !dist/server/entry-server.js
 yarn.lock
 yarn-error.log
+src/backend/lib/*
