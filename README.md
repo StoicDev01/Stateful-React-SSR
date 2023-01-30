@@ -7,7 +7,7 @@ React Server Side Rendered with typescript, vite and MaterialUI!
 - Folder structure simple and concise 
 
 # Home
-![site image](images/site.png)
+![site image](images/site_.png)
 
 # Libraries and tools used
 - [React](https://github.com/facebook/react)
