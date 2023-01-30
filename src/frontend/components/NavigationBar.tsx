@@ -33,7 +33,7 @@ export default function NavigationBar(props : NavigationBarProps ){
                                 textDecoration : "none"
                             }}
                         >
-                            {name}
+                            ReactSSR
                         </Typography>
                     </Link>
 

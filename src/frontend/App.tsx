@@ -1,6 +1,5 @@
 import { ThemeProvider, CssBaseline, createTheme } from '@mui/material';
 import { Link, Route, Routes } from 'react-router-dom'
-import Load from './components/Load';
 import NavigationBar from './components/NavigationBar';
 import Theme from './components/Theme';
 import React from "react"
@@ -36,28 +35,17 @@ const navPages = [
 ]
 
 
-interface Props {
-  loaded  : boolean,
-}
-
-export function App(props : Props) {  
+export function App() {  
   return (
     <>
       <ThemeProvider theme={Theme}>
         <CssBaseline/>
         <NavigationBar pages={navPages}/>
-
-          {props.loaded && (
-            <Routes>
-              {routes.map(({ path, component: RouteComp }) => {
-                return <Route key={path} path={path} element={<RouteComp />}></Route>
-              })}
-            </Routes>
-          )}
-
-          {!props.loaded && (
-            <Load/>
-          )}
+        <Routes>
+          {routes.map(({ path, component: RouteComp }) => {
+            return <Route key={path} path={path} element={<RouteComp />}></Route>
+          })}
+        </Routes>
       </ThemeProvider>
     </>
   )

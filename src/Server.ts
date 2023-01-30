@@ -5,7 +5,6 @@ import express, { Request, Response} from 'express'
 import { url, hostPort } from './config.js'
 import cors from "cors"
 import {ViteDevServer, createServer} from "vite"
-import { ServerData } from './ServerData.js'
 import apiRouter from './ApiRouter.js'
 import BodyParser from 'body-parser'
 import Compression from 'compression'
@@ -127,7 +126,6 @@ async function main(
     console.log("Started Server on : ", url);
   })
 
-  ServerData.load();
 }
 
 main();

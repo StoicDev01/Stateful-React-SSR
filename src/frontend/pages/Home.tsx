@@ -1,8 +1,7 @@
 import HomeItem from "../components/HomeItem"
 import HomeMenu from "../components/HomeMenu";
-import { BiUserPlus, BiWorld, BiPencil, BiEdit } from "react-icons/bi/index.js"
+import { BiUserPlus, BiWorld, BiPencil, BiEdit, BiPen } from "react-icons/bi/index.js"
 import React, { useState } from "react";
-import Feedback from "../components/FeedBack";
 
 export default function Home(){
 
@@ -18,31 +17,26 @@ export default function Home(){
   
   return (
     <>
-      <Feedback visible={feedbackVisible} onClose={onExitFeedback}/>
       <HomeMenu>
         <HomeItem
-          type="Character"
-          description='Create a character with story and characteristics'
+          type="Go to another Page"
+          description='Description here...'
           icon={BiUserPlus}
-          href="/create/character"
+          href="/another"
         />
         <HomeItem
-          type="World"
-          description='Create a world with story, characteristics, characters, places, ...'
+          type="Go to another page 2"
+          description='...'
           icon={BiWorld}
-          href="/create/world"
+          href="/another2"
         />
         <HomeItem
-          type="Story"
-          description='Create a rich story in a world with characters'
+          type="Go Test the API!"
+          description='Test te api on /api/test'
           icon={BiPencil}
-          href="/create/story"
-        />
-        <HomeItem
-          type="Feedback"
-          description='Submit Feedback to improve the site!'
-          icon={BiEdit}
-          onclick={onEnterFeedback}
+          onclick={
+            () => {location.href = "/api/test"}
+          }
         />
       </HomeMenu>
     </>

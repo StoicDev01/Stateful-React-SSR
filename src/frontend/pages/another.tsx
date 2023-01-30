@@ -1,10 +1,7 @@
 import { Container, Typography } from "@mui/material"
 import React from "react"
-import Link from "../components/Link"
-import {useTheme} from "@mui/material"
 
-export default function About(){
-    const theme = useTheme();
+export default function Another(){
 
     return <div>
 
@@ -24,13 +21,13 @@ export default function About(){
                     color : "primary.main"
                 }}
             >
-                About
+                Another page 1
 
                 
             </Typography>
 
             <p>
-                Server side rendered React typescript with vite and MaterialUI!                 
+                This is an another page
             </p>
         </Container>
 
