@@ -33,17 +33,6 @@ export default function About(){
                 ChaoticForge A website that offers a variety of creative generators to help writers, RPG players, and other storytellers bring their ideas to life. 
                 With character, name, and world generators, you can have insight's to create complex characters, imaginary worlds, and epic stories. 
             </p>
-            <a
-                style={{
-                    color: theme.palette.primary.main
-                }}
-
-                target="_blank"
-
-                href="https://github.com/izkeas/ChaoticForge"
-            >
-                See the project on Github!
-            </a>
         </Container>
 
     </div>
