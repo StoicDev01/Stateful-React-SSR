@@ -18,7 +18,7 @@
     "build:backend" : "tsup src/*.ts src/backend/api src/backend/lib/src --outDir dist",
     "build" : "yarn run build:frontend & yarn run build:backend & wait",
 
-    "generate:frontend": "vite build --outDir dist/static && npm run build:server && node prerender",
+    "generate:frontend": "vite build src/frontend --outDir ../../dist/static && npm run build:frontend:server && tsx src/prerender",
 
     "start": "NODE_ENV=production node dist/Server.js",
     "test": "vitest"

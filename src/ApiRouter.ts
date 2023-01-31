@@ -6,9 +6,7 @@ import Path from "path"
 export default async function apiRouter(apiFolder : string= "./api"){
   const apiRouter = Express.Router();
   const apifiles = Path.join(apiFolder, "/**/*.*s");
-  console.log("API FILES ", apifiles)
   const files = glob.sync(apifiles);
-  console.log(files);
 
   for (const apiFile of files){
     const apiPath = apiFile.match(/(?<=\/api)[\w\/]*/g);

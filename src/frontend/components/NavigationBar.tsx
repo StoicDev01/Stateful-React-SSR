@@ -1,7 +1,6 @@
 import { AppBar, Container, Toolbar, Typography, Box, Button, Stack } from "@mui/material"
 import { BiMenu } from "react-icons/bi/index.js"
 import Link from "./Link"
-import { name } from "../../config"
 import React from "react"
 
 interface NavigationBarProps{
@@ -79,7 +78,7 @@ export default function NavigationBar(props : NavigationBarProps ){
                                     textDecoration : "none"
                                 }}
                             >
-                                {name}
+                                ReactSSR
                         </Typography>
                     </Link>
                         
